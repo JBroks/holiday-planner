@@ -21,12 +21,20 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Holiday Planner</a>
+            <a class="navbar-brand" href="index.html">Holiday Planner</a>
         </div>
     </nav>
 
     <!-- Main -->
-
+    <main>
+        <section class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-12" id="filters">Selectors</div>
+                <div class="col-10" id="map"></div>
+                <div class="col-12" id="reset-button">Reset button</div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
 
@@ -63,8 +71,10 @@
     </footer>
 
     <!-- js files -->
+    
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="assets/js/maps.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCesm_z6bvZmFHS6qK9p4B5NhHcmosH91k&callback=initMap" async defer></script>
 
 </body>
 
