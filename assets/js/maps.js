@@ -57,6 +57,8 @@ var countries = {
         zoom: 4.5
     }
 };
+var markers = [];
+var MARKER_PATH = 'https://developers.google.com/maps/documentation/javascript/images/marker_green';
 
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
@@ -85,9 +87,6 @@ function initMap() {
 
     });
 
-    // Add a DOM event listener to react when the user selects a country.
-    document.getElementById('country').addEventListener(
-        'change', setAutocompleteCountry);
 
     // Create the autocomplete object and associate it with the UI input control.
     // Restrict the search to the default country, and to place type "cities".
@@ -96,28 +95,84 @@ function initMap() {
             types: ['(cities)'],
             componentRestrictions: countryRestrict
         });
+    places = new google.maps.places.PlacesService(map);
 
     autocomplete.addListener('place_changed', onPlaceChanged);
 
-    // Set the country restriction based on user input.
-    // Also center and zoom the map on the given country.
-    function setAutocompleteCountry() {
 
-        var country = document.getElementById('country').value;
-        autocomplete.setComponentRestrictions({ 'country': country });
-        map.setCenter(countries[country].center);
-        map.setZoom(countries[country].zoom);
+    // Add a DOM event listener to react when the user selects a country.
+    document.getElementById('country').addEventListener(
+        'change', setAutocompleteCountry);
 
+}
+
+// When the user selects a city, get the place details for the city and
+// zoom the map in on the city.
+function onPlaceChanged() {
+    var place = autocomplete.getPlace();
+    if (place.geometry) {
+        map.panTo(place.geometry.location);
+        map.setZoom(15);
+        search();
     }
+}
 
-    // When the user selects a city, get the place details for the city and
-    // zoom the map in on the city.
-    function onPlaceChanged() {
-        var place = autocomplete.getPlace();
-        if (place.geometry) {
-            map.panTo(place.geometry.location);
-            map.setZoom(15);
+// Search for hotels in the selected city, within the viewport of the map.
+function search() {
+    var search = {
+        bounds: map.getBounds(),
+        types: ['lodging']
+        //types: document.getElementById('place-type').value
+    };
+
+    places.nearbySearch(search, function(results, status) {
+        if (status === google.maps.places.PlacesServiceStatus.OK) {
+            clearMarkers();
+            // Create a marker for each hotel found, and
+            // assign a letter of the alphabetic to each marker icon.
+            for (var i = 0; i < results.length; i++) {
+                var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
+                var markerIcon = MARKER_PATH + markerLetter + '.png';
+                // Use marker animation to drop the icons incrementally on the map.
+                markers[i] = new google.maps.Marker({
+                    position: results[i].geometry.location,
+                    animation: google.maps.Animation.DROP,
+                    icon: markerIcon
+                });
+                // If the user clicks a hotel marker, show the details of that hotel
+                // in an info window.
+                markers[i].placeResult = results[i];
+                // google.maps.event.addListener(markers[i], 'click', showInfoWindow);
+                setTimeout(dropMarker(i), i * 100);
+            }
+        }
+    });
+}
+
+function clearMarkers() {
+    for (var i = 0; i < markers.length; i++) {
+        if (markers[i]) {
+            markers[i].setMap(null);
         }
     }
+    markers = [];
+}
 
+// Set the country restriction based on user input.
+// Also center and zoom the map on the given country.
+function setAutocompleteCountry() {
+
+    var country = document.getElementById('country').value;
+    autocomplete.setComponentRestrictions({ 'country': country });
+    map.setCenter(countries[country].center);
+    map.setZoom(countries[country].zoom);
+
+    clearMarkers();
+
+}
+
+function dropMarker(i) {
+    return function() {
+        markers[i].setMap(map);
+    };
 }
