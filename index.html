@@ -49,17 +49,15 @@
                     </select>
                 </div>
                 <div class="col-3 text-center" id="search-city"><label for="city-input">City:</label><input id="city-input" class="controls" type="text" placeholder="Enter a city"></div>
-                <div class="col-3 text-center "id="option-selector">
-                    <input type="radio" name="type" id="option-accommodation" checked="checked">
-                    <label for="option-accommodation">Accommodation</label>
-
-                    <input type="radio" name="type" id="option-tourist-attractions">
-                    <label for="option-tourist-attractions">Tourist attractions</label>
-
-                    <input type="radio" name="type" id="option-restaurants">
-                    <label for="option-restaurants">Restaurants</label>
+                <div class="col-3 text-center " id="place-selector">
+                    <select id="place-type">
+                      <option value="lodging" selected>Accommodation</option>
+                      <option value="restaurants">Restaurants</option>
+                      <option value="points-of-interest">Tourist attractions</option>
+                    </select>
                 </div>
             </div>
+
             <div class="row justify-content-center">
                 <div class="col-10" id="map"></div>
             </div>
