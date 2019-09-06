@@ -31,9 +31,35 @@
         <section class="container-fluid">
 
             <div class="row">
-                <div class="col-4 text-center" id="search-box"><input id="pac-input" class="controls" type="text" placeholder="Enter a city"></div>
-            </div>
+                <div class="col-3 text-center" id="search-country">
+                    <select id="country">
+                      <option value="all" selected>All</option>
+                      <option value="au">Australia</option>
+                      <option value="br">Brazil</option>
+                      <option value="ca">Canada</option>
+                      <option value="eg">Egypt</option>
+                      <option value="gr">Greece</option>
+                      <option value="mx">Mexico</option>
+                      <option value="nz">New Zealand</option>
+                      <option value="it">Italy</option>
+                      <option value="za">South Africa</option>
+                      <option value="es">Spain</option>
+                      <option value="tr">Turkey</option>
+                      <option value="us">U.S.A.</option>
+                    </select>
+                </div>
+                <div class="col-3 text-center" id="search-city"><label for="city-input">City:</label><input id="city-input" class="controls" type="text" placeholder="Enter a city"></div>
+                <div class="col-3 text-center "id="option-selector">
+                    <input type="radio" name="type" id="option-accommodation" checked="checked">
+                    <label for="option-accommodation">Accommodation</label>
 
+                    <input type="radio" name="type" id="option-tourist-attractions">
+                    <label for="option-tourist-attractions">Tourist attractions</label>
+
+                    <input type="radio" name="type" id="option-restaurants">
+                    <label for="option-restaurants">Restaurants</label>
+                </div>
+            </div>
             <div class="row justify-content-center">
                 <div class="col-10" id="map"></div>
             </div>
@@ -41,7 +67,7 @@
             <div class="row">
                 <div class="col-12" id="reset-button">Reset button</div>
             </div>
-            
+
         </section>
 
     </main>
