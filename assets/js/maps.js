@@ -3,6 +3,17 @@ var google;
 var countryRestrict;
 var autocomplete;
 var map, places;
+var options = {
+    'hotel': {
+        types: ['lodging']
+    },
+    'restaurant': {
+        types: ['restaurant', 'bar', 'cafe']
+    },
+    'attraction': {
+        types: ['museum', 'art_gallery', 'park', 'amusement_park']
+    }
+};
 var countries = {
     'all': {
         center: { lat: 45.4, lng: 0 },
@@ -99,6 +110,9 @@ function initMap() {
 
     autocomplete.addListener('place_changed', onPlaceChanged);
 
+    document.getElementById('place-type').addEventListener('change', search);
+
+
 
     // Add a DOM event listener to react when the user selects a country.
     document.getElementById('country').addEventListener(
@@ -114,16 +128,17 @@ function onPlaceChanged() {
         map.panTo(place.geometry.location);
         map.setZoom(15);
         search();
-    }
+    } 
 }
 
 // Search for hotels in the selected city, within the viewport of the map.
 function search() {
+    var option = document.getElementById('place-type').value;
     var search = {
         bounds: map.getBounds(),
-        types: ['lodging']
-        //types: document.getElementById('place-type').value
+        types: options[option].types
     };
+
 
     places.nearbySearch(search, function(results, status) {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
