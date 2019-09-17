@@ -145,6 +145,7 @@ function search() {
 
     places.nearbySearch(search, function(results, status) {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
+            clearResults();
             clearMarkers();
             // Create a marker for each place (accommodation/restaurant/attraction) found, and
             // assign a letter of the alphabetic to each marker icon.
