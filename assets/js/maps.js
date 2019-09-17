@@ -103,6 +103,7 @@ function initMap() {
         content: document.getElementById('info-content')
     });
 
+
     // Create the autocomplete object and associate it with the UI input control.
     // Restrict the search to the default country, and to place type "cities".
     autocomplete = new google.maps.places.Autocomplete(
@@ -120,9 +121,11 @@ function initMap() {
     // Add a DOM event listener to react when the user selects a country.
     document.getElementById('country').addEventListener(
         'change', setAutocompleteCountry);
+        
+    // Add a DOM event listener to react when the user clicks the reset button.  
+    document.getElementById('reset-button').addEventListener('click', resetButton);
 
 }
-
 
 // When the user selects a city, get the place details for the city and
 // zoom the map in on the city.
@@ -192,6 +195,7 @@ function setAutocompleteCountry() {
     clearResults();
     clearMarkers();
     clearAutocomplete();
+    clearPlaceTypeSelection();
 
 }
 
@@ -309,10 +313,19 @@ function clearAutocomplete() {
     document.getElementById('city-input').value = '';
 }
 
+function clearCoutrySelection() {
+    document.getElementById('country').value = 'all';
+}
+
+function clearPlaceTypeSelection() {
+    document.getElementById('place-type').value = 'hotel';
+}
+
 function resetButton() {
     clearMarkers();
     clearResults();
-    initMap();
     clearAutocomplete();
-    
+    clearCoutrySelection();
+    clearPlaceTypeSelection();
+    initMap();
 }
