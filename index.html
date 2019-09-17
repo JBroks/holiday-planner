@@ -30,6 +30,7 @@
 
         <section class="container-fluid">
 
+            <!-- Filters -->
             <div class="row">
                 <div class="col-3 text-center" id="search-country">
                     <select id="country">
@@ -51,19 +52,56 @@
                 <div class="col-3 text-center" id="search-city"><label for="city-input">City:</label><input id="city-input" class="controls" type="text" placeholder="Enter a city"></div>
                 <div class="col-3 text-center " id="place-selector">
                     <select id="place-type">
-                      <option value="lodging" selected>Accommodation</option>
-                      <option value="restaurants">Restaurants</option>
-                      <option value="points-of-interest">Tourist attractions</option>
+                      <option value="hotel" selected>Accommodation</option>
+                      <option value="restaurant">Restaurants</option>
+                      <option value="attraction">Tourist attractions</option>
                     </select>
+                </div>
+                <div class="col-3 text-center" id="reset-button"><button>Reset</button></div>
+            </div>
+
+            <!-- Map -->
+            <div class="row justify-content-center">
+                <div class="col-12" id="map"></div>
+            </div>
+
+            <!-- Info content pop up -->
+            <div style="display: none">
+                <div id="info-content">
+                    <table>
+                        <tr id="iw-url-row" class="iw_table_row">
+                            <td id="iw-icon" class="iw_table_icon"></td>
+                            <td id="iw-url"></td>
+                        </tr>
+                        <tr id="iw-address-row" class="iw_table_row">
+                            <td class="iw_attribute_name">Address:</td>
+                            <td id="iw-address"></td>
+                        </tr>
+                        <tr id="iw-phone-row" class="iw_table_row">
+                            <td class="iw_attribute_name">Telephone:</td>
+                            <td id="iw-phone"></td>
+                        </tr>
+                        <tr id="iw-rating-row" class="iw_table_row">
+                            <td class="iw_attribute_name">Rating:</td>
+                            <td id="iw-rating"></td>
+                        </tr>
+                        <tr id="iw-website-row" class="iw_table_row">
+                            <td class="iw_attribute_name">Website:</td>
+                            <td id="iw-website"></td>
+                        </tr>
+                    </table>
                 </div>
             </div>
 
+            <!-- Table containing results -->
             <div class="row justify-content-center">
-                <div class="col-10" id="map"></div>
-            </div>
-
-            <div class="row">
-                <div class="col-12" id="reset-button">Reset button</div>
+                <div class="col-12">
+                    <div id="listing">
+                        <table id="resultsTable">
+                            <tbody id="results"></tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
 
         </section>
