@@ -123,6 +123,7 @@ function initMap() {
 
 }
 
+
 // When the user selects a city, get the place details for the city and
 // zoom the map in on the city.
 function onPlaceChanged() {
@@ -190,6 +191,7 @@ function setAutocompleteCountry() {
 
     clearResults();
     clearMarkers();
+    clearAutocomplete();
 
 }
 
@@ -212,15 +214,20 @@ function addResult(result, i) {
 
     var iconTd = document.createElement('td');
     var nameTd = document.createElement('td');
+    var addressTd = document.createElement('td');
     var icon = document.createElement('img');
     icon.src = markerIcon;
     icon.setAttribute('class', 'placeIcon');
     icon.setAttribute('className', 'placeIcon');
     var name = document.createTextNode(result.name);
+    var address = document.createTextNode(result.vicinity);
     iconTd.appendChild(icon);
     nameTd.appendChild(name);
+    addressTd.appendChild(address);
     tr.appendChild(iconTd);
     tr.appendChild(nameTd);
+    tr.appendChild(addressTd);
+
     results.appendChild(tr);
 }
 
@@ -296,4 +303,16 @@ function buildIWContent(place) {
     else {
         document.getElementById('iw-website-row').style.display = 'none';
     }
+}
+
+function clearAutocomplete() {
+    document.getElementById('city-input').value = '';
+}
+
+function resetButton() {
+    clearMarkers();
+    clearResults();
+    initMap();
+    clearAutocomplete();
+    
 }
