@@ -20,8 +20,8 @@
     <!-- Navbar -->
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">Holiday Planner</a>
+        <div class="container-fluid justify-content-center">
+            <a class="navbar-brand" href="index.html"><img src="assets/images/logo3.png" alt="logo"></a>
         </div>
     </nav>
 
@@ -31,10 +31,14 @@
         <section class="container-fluid">
 
             <!-- Filters -->
+
             <div class="row">
+
+                <!-- Country selector -->
+
                 <div class="col-3 text-center" id="search-country">
                     <select id="country">
-                      <option value="all" selected>All</option>
+                      <option value="default" selected>Select country:</option>
                       <option value="au">Australia</option>
                       <option value="br">Brazil</option>
                       <option value="ca">Canada</option>
@@ -49,23 +53,37 @@
                       <option value="us">U.S.A.</option>
                     </select>
                 </div>
+
+                <!-- City autocomplete -->
+
                 <div class="col-3 text-center" id="search-city"><label for="city-input">City:</label><input id="city-input" class="controls" type="text" placeholder="Enter a city"></div>
-                <div class="col-3 text-center " id="place-selector">
+
+                <!-- Place type selector -->
+
+                <div class="col-3 text-center" id="place-selector">
                     <select id="place-type">
-                      <option value="hotel" selected>Accommodation</option>
+                      <option value="default" selected>Select place type:</option>
+                      <option value="hotel">Accommodation</option>
                       <option value="restaurant">Restaurants</option>
                       <option value="attraction">Tourist attractions</option>
                     </select>
                 </div>
-                <div class="col-3 text-center"><button id="reset-button">Reset</button></div>
+
+
+                <!-- Reset button -->
+
+                <div class="col-3 text-center"><button class="button" id="reset-button">Reset</button></div>
+
             </div>
 
             <!-- Map -->
+
             <div class="row justify-content-center">
                 <div class="col-12" id="map"></div>
             </div>
 
             <!-- Info content pop up -->
+
             <div style="display: none">
                 <div id="info-content">
                     <table>
@@ -94,6 +112,7 @@
             </div>
 
             <!-- Table containing results -->
+
             <div class="row justify-content-center">
                 <div class="col-12">
                     <div id="listing">
@@ -143,8 +162,11 @@
     </footer>
 
     <!-- js files -->
-
+    
+    
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="assets/js/libraries/jquery.min.js"></script>
+    <script src="assets/js/select.js"></script>
     <script src="assets/js/maps.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCesm_z6bvZmFHS6qK9p4B5NhHcmosH91k&libraries=places&callback=initMap" async defer></script>
 

@@ -15,7 +15,7 @@ var options = {
     }
 };
 var countries = {
-    'all': {
+    'default': {
         center: { lat: 45.4, lng: 0 },
         zoom: 2.9
     },
@@ -74,8 +74,8 @@ var hostnameRegexp = new RegExp('^https?://.+?/');
 
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
-        zoom: countries['all'].zoom,
-        center: countries['all'].center,
+        zoom: countries['default'].zoom,
+        center: countries['default'].center,
         mapTypeControl: false,
         panControl: false,
         zoomControl: false,
@@ -314,11 +314,11 @@ function clearAutocomplete() {
 }
 
 function clearCoutrySelection() {
-    document.getElementById('country').value = 'all';
+    document.getElementById('country').value = 'default';
 }
 
 function clearPlaceTypeSelection() {
-    document.getElementById('place-type').value = 'hotel';
+    document.getElementById('place-type').value = 'default';
 }
 
 function resetButton() {
