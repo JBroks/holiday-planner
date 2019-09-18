@@ -19,7 +19,7 @@
 
     <!-- Navbar -->
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg">
         <div class="container-fluid justify-content-center">
             <a class="navbar-brand" href="index.html"><img src="assets/images/logo3.png" alt="logo"></a>
         </div>
@@ -32,13 +32,14 @@
 
             <!-- Filters -->
 
-            <div class="row">
+            <div class="row py-4" id="filters-container">
 
                 <!-- Country selector -->
 
-                <div class="col-3 text-center" id="search-country">
-                    <select id="country">
-                      <option value="default" selected>Select country:</option>
+                <div class="col-4 text-center" id="search-country">
+                    <label for="country-select" accesskey="c">Country:</label>
+                    <select class="button" name="country-select" id="country">
+                      <option value="default" selected>Select country</option>
                       <option value="au">Australia</option>
                       <option value="br">Brazil</option>
                       <option value="ca">Canada</option>
@@ -56,13 +57,14 @@
 
                 <!-- City autocomplete -->
 
-                <div class="col-3 text-center" id="search-city"><label for="city-input">City:</label><input id="city-input" class="controls" type="text" placeholder="Enter a city"></div>
+                <div class="col-4 text-center" id="search-city"><label for="city-input">City:</label><input id="city-input" class="controls" type="text" placeholder="Enter a city"></div>
 
                 <!-- Place type selector -->
 
-                <div class="col-3 text-center" id="place-selector">
-                    <select id="place-type">
-                      <option value="default" selected>Select place type:</option>
+                <div class="col-4 text-center" id="place-selector">
+                    <label for="type-select" accesskey="t">Type:</label>
+                    <select class=" text-center button" name="type-select" id="place-type">
+                      <option value="default" selected>Select place type</option>
                       <option value="hotel">Accommodation</option>
                       <option value="restaurant">Restaurants</option>
                       <option value="attraction">Tourist attractions</option>
@@ -72,13 +74,13 @@
 
                 <!-- Reset button -->
 
-                <div class="col-3 text-center"><button class="button" id="reset-button">Reset</button></div>
+                <div class="col-12 pt-4 text-center"><button class="button" id="reset-button" aria-label="reset">Reset</button></div>
 
             </div>
 
             <!-- Map -->
 
-            <div class="row justify-content-center">
+            <div class="row px-2 pb-4 justify-content-center" id="map-container">
                 <div class="col-12" id="map"></div>
             </div>
 
@@ -162,11 +164,10 @@
     </footer>
 
     <!-- js files -->
-    
-    
+
+
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="assets/js/libraries/jquery.min.js"></script>
-    <script src="assets/js/select.js"></script>
     <script src="assets/js/maps.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCesm_z6bvZmFHS6qK9p4B5NhHcmosH91k&libraries=places&callback=initMap" async defer></script>
 
