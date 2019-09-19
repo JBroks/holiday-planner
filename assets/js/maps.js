@@ -168,7 +168,6 @@ function search() {
                 // in an info window.
                 markers[i].placeResult = results[i];
                 google.maps.event.addListener(markers[i], 'click', showInfoWindow);
-                // google.maps.event.addListener(markers[i], 'click', showInfoWindow);
                 setTimeout(dropMarker(i), i * 100);
                 addResult(results[i], i);
             }
@@ -245,8 +244,8 @@ function clearResults() {
     }
 }
 
-// Get the place details for a hotel. Show the information in an info window,
-// anchored on the marker for the hotel that the user selected.
+// Get the place details. Show the information in an info window,
+// anchored on the marker for the place that the user selected.
 function showInfoWindow() {
     var marker = this;
     places.getDetails({ placeId: marker.placeResult.place_id },
@@ -275,17 +274,17 @@ function buildIWContent(place) {
         document.getElementById('iw-phone-row').style.display = 'none';
     }
 
-    // Assign a five-star rating to the hotel, using a black star ('&#10029;')
-    // to indicate the rating the hotel has earned, and a white star ('&#10025;')
+    // Assign a five-star rating to the hotel / restaurant, using a yellow star ('&#11088;')
+    // to indicate the rating the hotel / restaurant has earned, and a empty/outlined star ('&#9734;')
     // for the rating points not achieved.
     if (place.rating) {
         var ratingHtml = '';
         for (var i = 0; i < 5; i++) {
             if (place.rating < (i + 0.5)) {
-                ratingHtml += '&#10025;';
+                ratingHtml += '&#9734;';
             }
             else {
-                ratingHtml += '&#10029;';
+                ratingHtml += '&#11088;';
             }
             document.getElementById('iw-rating-row').style.display = '';
             document.getElementById('iw-rating').innerHTML = ratingHtml;
