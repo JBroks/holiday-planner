@@ -121,7 +121,7 @@ function initMap() {
     // Add a DOM event listener to react when the user selects a country.
     document.getElementById('country').addEventListener(
         'change', setAutocompleteCountry);
-        
+
     // Add a DOM event listener to react when the user clicks the reset button.  
     document.getElementById('reset-button').addEventListener('click', resetButton);
 
@@ -151,6 +151,8 @@ function search() {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
             clearResults();
             clearMarkers();
+            // Add heading for the results table
+            document.getElementById('results-heading').innerHTML = "Results";
             // Create a marker for each place (accommodation/restaurant/attraction) found, and
             // assign a letter of the alphabetic to each marker icon.
             for (var i = 0; i < results.length; i++) {
@@ -185,6 +187,7 @@ function clearMarkers() {
 
 // Set the country restriction based on user input.
 // Also center and zoom the map on the given country.
+
 function setAutocompleteCountry() {
 
     var country = document.getElementById('country').value;
@@ -211,7 +214,7 @@ function addResult(result, i) {
     var markerIcon = MARKER_PATH + markerLetter + '.png';
 
     var tr = document.createElement('tr');
-    tr.style.backgroundColor = (i % 2 === 0 ? '#F0F0F0' : '#FFFFFF');
+    tr.style.backgroundColor = (i % 2 === 0 ? '#6b6e70' : '#474b4f');
     tr.onclick = function() {
         google.maps.event.trigger(markers[i], 'click');
     };
@@ -327,5 +330,6 @@ function resetButton() {
     clearAutocomplete();
     clearCoutrySelection();
     clearPlaceTypeSelection();
+    $('#results-heading').empty();
     initMap();
 }

@@ -47,6 +47,12 @@ footer {
     margin: 0 120px;
 }
 
+/** Navbar padding removed to apply bootstrap classes **/
+
+.navbar {
+    padding: 0;
+}
+
 /** Display label above input **/
 
 select,
@@ -63,6 +69,12 @@ select {
 label,
 #reset-button {
     text-transform: uppercase;
+}
+
+/** City input font size changed **/
+
+input {
+    font-size: 20px;
 }
 
 /** Reset button **/
@@ -113,9 +125,22 @@ select {
 /** Social media icons size increase **/
 
 .fa {
-    font-size: 20px;
+    font-size: 25px;
 }
 
+/** Centering table in a div **/
+
+table {
+    margin: auto;
+    font-weight: 300;
+}
+
+/** Styling heading for the results table **/
+
+h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
 
 /** MEDIA QUERIES **/
 
@@ -151,7 +176,7 @@ select {
     }
 
     select {
-        width: 30%;
+        width: 35%;
     }
 
 }
@@ -175,7 +200,7 @@ select {
 @media only screen and (max-width: 375px) {
 
     select {
-        width: 60%;
+        width: 70%;
     }
 
 }
