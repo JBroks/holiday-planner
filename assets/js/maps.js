@@ -332,3 +332,11 @@ function resetButton() {
     $('#results-heading').empty();
     initMap();
 }
+
+
+// Fix to bootstrap menu issue (not collapsing after clicking a link)
+
+$(".navbar-nav li a").click(function(event) {
+    if (!$(this).parent().hasClass('dropdown'))
+        $(".navbar-collapse").collapse('hide');
+});
