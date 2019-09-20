@@ -49,7 +49,11 @@
 
             <!-- Filters -->
 
-            <div class="row mt-5 mb-4" id="filters-container">
+            <div class="row my-4" id="filters-container">
+
+                <div class="col-12 text-center mb-4">
+                    <h1 id="filters-heading">Filters</h1>
+                </div>
 
                 <!-- Country selector -->
 
@@ -81,7 +85,7 @@
                 <div class="col-md-4 mt-md-0 mt-3 text-center" id="place-selector">
                     <label for="type-select" accesskey="t">Type:</label>
                     <select class=" text-center button" name="type-select" id="place-type">
-                      <option value="default" selected>Select place type</option>
+                      <option value="default" disabled selected hidden>Select place type</option>
                       <option value="hotel">Accommodation</option>
                       <option value="restaurant">Restaurants</option>
                       <option value="attraction">Tourist attractions</option>
@@ -91,14 +95,17 @@
 
                 <!-- Reset button -->
 
-                <div class="col-12 mt-5 text-center"><button class="button" id="reset-button" aria-label="reset">Reset</button></div>
+                <div class="col-12 mt-5 mb-4 text-center"><button class="button" id="reset-button" aria-label="reset">Reset</button></div>
 
             </div>
 
             <!-- Map -->
 
-            <div class="row mx-2 justify-content-center" id="map-container">
-                <div class="col-12" id="map"></div>
+            <div class="row pt-4 pb-5 justify-content-center" id="map-container">
+                <div class="col-12 text-center mb-4">
+                    <h2 id="map-heading">Map</h2>
+                </div>
+                <div class="col-10" id="map"></div>
             </div>
 
             <!-- Info content pop up -->
@@ -133,8 +140,8 @@
             <!-- Table containing results -->
 
             <div class="row my-4 justify-content-center" id="results-container">
-                <div class="col-12 text-center">
-                    <h1 id="results-heading"></h1>
+                <div class="col-12 text-center mb-4">
+                    <h2 id="results-heading"></h2>
                 </div>
                 <div class="col-12">
                     <div id="listing">
