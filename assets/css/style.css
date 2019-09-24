@@ -1,8 +1,8 @@
-/** Import fonts **/
+/* Import fonts */
 
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap");
 
-/** General setting for body content **/
+/* General setting for body content */
 
 body {
     color: #86c232;
@@ -12,7 +12,7 @@ body {
     font-size: 1.1rem;
 }
 
-/** Map size **/
+/* Map size */
 
 #map {
     height: 600px;
@@ -93,7 +93,11 @@ spinner animation found on CodePen: https://codepen.io/judecodes/pen/PrBOvG?&pag
     background: rgba(0, 0, 0, .5);
 }
 
-/** Navbar logo and footer links styling **/
+.fixed-top {
+    margin: 200px;
+}
+
+/* Navbar logo and footer links styling */
 
 .navbar-brand img {
     width: 120%;
@@ -113,7 +117,7 @@ footer a:hover {
     text-decoration: none;
 }
 
-/** Create separator lines between navbar /  footer and the main content **/
+/* Create separator lines between navbar /  footer and the main content */
 
 nav {
     border-bottom: solid 2px #61892f;
@@ -125,7 +129,7 @@ footer {
     margin: 0 120px;
 }
 
-/** Navbar padding removed to apply bootstrap classes **/
+/* Navbar padding removed to apply bootstrap classes */
 
 .navbar {
     padding: 0;
@@ -153,7 +157,7 @@ footer {
     margin: auto;
 }
 
-/** Display label above input **/
+/* Display label above input */
 
 select,
 label {
@@ -164,26 +168,26 @@ select {
     margin: auto;
 }
 
-/** Set label and reset button text to uppercase **/
+/* Set label and reset button text to uppercase */
 
 label,
 #reset-button {
     text-transform: uppercase;
 }
 
-/** City input font size changed **/
+/* City input font size changed */
 
 input {
     font-size: 20px;
 }
 
-/** Reset button **/
+/* Reset button */
 
 #reset-button {
     padding: 8px 20px;
 }
 
-/** Styling for buttons **/
+/* Styling for buttons */
 
 .button {
     color: #fff;
@@ -195,21 +199,21 @@ input {
     background-color: #86c232;
 }
 
-/** Swich of frame on focus **/
+/* Swich of frame on focus */
 
 .button:focus,
 .navbar-toggler:focus {
     outline: none;
 }
 
-/** Set cursor to pointer for table content and buttons **/
+/* Set cursor to pointer for table content and buttons */
 
 table,
 .button {
     cursor: pointer;
 }
 
-/** Edit select menu button look so it doesn't display default arrows and doesnt't round edges **/
+/* Edit select menu button look so it doesn't display default arrows and doesnt't round edges */
 
 select {
     -webkit-border-radius: 0px;
@@ -228,13 +232,13 @@ select {
 
 }
 
-/** Margin between social media links **/
+/* Margin between social media links */
 
 .list-inline-item:not(:last-child) {
     margin-right: 2rem;
 }
 
-/** Social media icons and navbar button size increase **/
+/* Social media icons and navbar button size increase */
 
 .list-inline-item .fa {
     font-size: 1.4rem;
@@ -244,14 +248,14 @@ select {
     font-size: 2.5rem;
 }
 
-/** Centering table in a div **/
+/* Centering table in a div */
 
 table {
     margin: auto;
     font-weight: 300;
 }
 
-/** Styling heading for the results table **/
+/* Styling heading for the results table */
 
 h1,
 h2 {
@@ -263,16 +267,57 @@ td {
     cursor: pointer;
 }
 
-/** Information pop up styling **/
+/* Information pop up styling */
 
 #info-content,
 #info-content a {
     color: #474b4e;
 }
 
-/** MEDIA QUERIES **/
+/* BACK TO TOP BUTTON */
+/* Back to top button inspired by this Codepen solution: https://codepen.io/matthewcain/pen/ZepbeR */
 
-/** Media queries to deal with select menu button and navbar / footer separator **/
+#button {
+    display: inline-block;
+    background-color: transparent;
+    color: #222629;
+    border: 1px solid #222629;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 3px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    transition: background-color .3s,
+    opacity .5s, visibility .5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 97;
+}
+
+#button::after {
+    content: "\f077";
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2em;
+    line-height: 50px;
+}
+
+#button:active {
+    color: #6b6e70;
+    background-color: #222629;
+}
+
+#button.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* MEDIA QUERIES */
+
+/* Media queries to deal with select menu button and navbar / footer separator */
 
 @media only screen and (max-width: 1200px) {
 
@@ -349,4 +394,16 @@ td {
         width: 70%;
     }
 
+}
+
+/* Solution to sticky hover on mobile devices found here: https://medium.com/@ferie/detect-a-touch-device-with-only-css-9f8e30fa1134 */
+
+@media (hover: hover) {
+    
+    #button:hover {
+        cursor: pointer;
+        background-color: #222629;
+        color: #6b6e70;
+    }
+    
 }

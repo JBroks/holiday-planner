@@ -23,6 +23,8 @@
         <div class="loader"></div>
     </div>
 
+    <!-- Back to top button -->
+    <a id="button"></a>
 
     <!-- Navbar -->
 
@@ -65,7 +67,7 @@
                 <!-- Country selector -->
 
                 <div class="col-md-4 text-center" id="search-country">
-                    <label for="country-select" accesskey="c">Country:</label>
+                    <label for="country" accesskey="c">Country:</label>
                     <select class="button" name="country-select" id="country">
                       <option value="default" disabled selected hidden>Select country</option>
                       <option value="au">Australia</option>
@@ -90,7 +92,7 @@
                 <!-- Place type selector -->
 
                 <div class="col-md-4 mt-md-0 mt-3 text-center" id="place-selector">
-                    <label for="type-select" accesskey="t">Type:</label>
+                    <label for="place-type" accesskey="t">Type:</label>
                     <select class=" text-center button" name="type-select" id="place-type">
                       <option value="default" disabled selected hidden>Select place type</option>
                       <option value="hotel">Accommodation</option>
@@ -177,7 +179,7 @@
                             <a href="https://ie.linkedin.com/in/joanna-broks-97860821" target="_blank"><i class="fa fa-linkedin" aria-hidden="true" rel="noopener"></i><span class="sr-only">LinkedIn</span></a>
                         </li>
                         <li class="list-inline-item">
-                            <a href="mailto:joanna.broks@gmail.com" rel="email"><i class="fa fa-envelope-o" aria-hidden="true"></i><span class="sr-only">Email</span></a>
+                            <a href="mailto:joanna.broks@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i><span class="sr-only">Email</span></a>
                         </li>
                         <li class="list-inline-item">
                             <a href="https://github.com/JBroks" target="_blank"><i class="fa fa-github" aria-hidden="true" rel="noopener"></i><span class="sr-only">GitHub</span></a>
@@ -202,6 +204,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="assets/js/maps.js"></script>
+    <script src="assets/js/script.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCesm_z6bvZmFHS6qK9p4B5NhHcmosH91k&libraries=places&callback=initMap" async defer></script>
 
 </body>
