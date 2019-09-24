@@ -23,6 +23,76 @@ body {
     background-color: #6b6e70;
 }
 
+/* SPINNER */
+/* Spinner on data loading
+spinner animation found on CodePen: https://codepen.io/judecodes/pen/PrBOvG?&page=1 */
+
+.loader {
+    z-index: 99;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border-top: 2px solid #608930;
+    border-bottom: 2px solid transparent;
+    border-left: 2px solid transparent;
+    border-right: 2px solid transparent;
+    animation: spin 3s linear infinite forwards;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.loader::before,
+.loader::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    border-top: 2px solid #608930;
+    border-bottom: 2px solid transparent;
+    border-left: 2px solid transparent;
+    border-right: 2px solid transparent;
+}
+
+.loader::before {
+    top: 7px;
+    left: 7px;
+    width: 178px;
+    height: 178px;
+    border-top: 2px solid #608930;
+    animation: spin 2s linear infinite forwards;
+}
+
+.loader::after {
+    top: 16px;
+    left: 16px;
+    width: 160px;
+    height: 160px;
+    border-top: 2px solid #608930;
+    animation: spin 1s linear infinite forwards;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Overlay styled to dim the background for spinner */
+
+#overlay {
+    z-index: 98;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, .5);
+}
+
 /** Navbar logo and footer links styling **/
 
 .navbar-brand img {
@@ -128,14 +198,14 @@ input {
 /** Swich of frame on focus **/
 
 .button:focus,
-#city-input:focus,
 .navbar-toggler:focus {
     outline: none;
 }
 
 /** Set cursor to pointer for table content and buttons **/
 
-table, .button {
+table,
+.button {
     cursor: pointer;
 }
 
@@ -183,7 +253,8 @@ table {
 
 /** Styling heading for the results table **/
 
-h1 {
+h1,
+h2 {
     font-size: 1.8rem;
     font-weight: 700;
 }
@@ -225,6 +296,14 @@ td {
 
 }
 
+@media only screen and (max-width: 768px) {
+
+    select {
+        width: 40%;
+    }
+
+}
+
 @media only screen and (max-width: 750px) {
 
     nav,
@@ -248,7 +327,13 @@ td {
         width: 40%;
     }
 
+    .navbar-nav .nav-link {
+        text-align: center;
+    }
+
 }
+
+
 
 @media only screen and (max-width: 425px) {
 

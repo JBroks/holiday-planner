@@ -72,6 +72,14 @@ var markers = [];
 var MARKER_PATH = 'https://developers.google.com/maps/documentation/javascript/images/marker_green';
 var hostnameRegexp = new RegExp('^https?://.+?/');
 
+// Spinner show method
+
+/**
+ * This is jQuery method that activates the overlay div containing spinner
+ * This was implemented so the user can see the loading spinner instead of empty space while the map is loading
+ */
+$("#overlay").show();
+
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
         zoom: countries['default'].zoom,
@@ -103,7 +111,16 @@ function initMap() {
         content: document.getElementById('info-content')
     });
 
-
+// Spinner hide method
+    
+    /**
+     * This is jQuery method that hides the overlay div containing spinner
+     * When map is loaded spinner with overlay will be hidden
+     */
+     
+    $("#overlay").hide();
+    
+    
     // Create the autocomplete object and associate it with the UI input control.
     // Restrict the search to the default country, and to place type "cities".
     autocomplete = new google.maps.places.Autocomplete(
