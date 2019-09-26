@@ -156,6 +156,12 @@ function initMap() {
 
 }
 
+
+/**
+ * Function added to avoid dropping markers if location (city) is not specified
+ * Function pops-up an alert saying that city has to be specified first
+ * If city is specified lintener will call search function
+ */
 function typeWithoutPlace() {
     var city = document.getElementById('city-input').value;
     if (city == '') {
@@ -176,6 +182,16 @@ function onPlaceChanged() {
     if (place.geometry) {
         map.panTo(place.geometry.location);
         map.setZoom(15);
+        onDefaultType();
+    }
+}
+
+function onDefaultType() {
+    var option = document.getElementById('place-type').value;
+    if (option == 'default') {
+       // do nothing 
+    }
+    else {
         search();
     }
 }
@@ -220,6 +236,10 @@ function search() {
     });
 }
 
+/**
+ * Function clears markers
+ */
+ 
 function clearMarkers() {
     for (var i = 0; i < markers.length; i++) {
         if (markers[i]) {
@@ -246,6 +266,7 @@ function setAutocompleteCountry() {
     clearPlaceTypeSelection();
 
 }
+
 
 function dropMarker(i) {
     return function() {
@@ -370,6 +391,11 @@ function buildIWContent(place) {
     }
 }
 
+/**
+ * Functions supporting the reset process
+ * Functions clear autocomplete and sets select menus to the default settings
+ */
+ 
 function clearAutocomplete() {
     document.getElementById('city-input').value = '';
 }
@@ -382,6 +408,13 @@ function clearPlaceTypeSelection() {
     document.getElementById('place-type').value = 'default';
 }
 
+
+/**
+ * Function to reset all settings applied
+ * On reset button click all filters will return to their default settings
+ * Autocomplete field and all markers and results will be cleared
+ * Map will be initiated again
+ */
 function resetButton() {
     clearMarkers();
     clearResults();
