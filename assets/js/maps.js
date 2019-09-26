@@ -168,9 +168,11 @@ function typeWithoutPlace() {
 
     if (countrySelect == 'default' && city == '') {
         Swal.fire('Information missing', 'Please select a country and enter a city name first!', 'info');
+        clearPlaceTypeSelection();
     }
     else if (countrySelect != 'default' && city == '') {
         Swal.fire('Information missing', 'Please enter a city name first!', 'info');
+        clearPlaceTypeSelection();
     }
     else {
         search();
@@ -200,10 +202,7 @@ function onPlaceChanged() {
 
 function onDefaultType() {
     var option = document.getElementById('place-type').value;
-    if (option == 'default') {
-        // do nothing 
-    }
-    else {
+    if (option != 'default') {
         search();
     }
 }
@@ -436,13 +435,3 @@ function resetButton() {
     $('#results-heading').empty();
     initMap();
 }
-
-
-/**
- * Fix to bootstrap menu issue (not collapsing after clicking a link)
- */
-
-$(".navbar-nav li a").click(function(event) {
-    if (!$(this).parent().hasClass('dropdown'))
-        $(".navbar-collapse").collapse('hide');
-});

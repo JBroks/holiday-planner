@@ -20,3 +20,12 @@ btn.on('click', function(d) {
   $('html, body').animate({ scrollTop: 0 }, '300');
 });
 
+
+/**
+ * Fix to bootstrap menu issue (not collapsing after clicking a link)
+ */
+
+$(".navbar-nav li a").click(function(event) {
+    if (!$(this).parent().hasClass('dropdown'))
+        $(".navbar-collapse").collapse('hide');
+});
