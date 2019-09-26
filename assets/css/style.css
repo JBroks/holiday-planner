@@ -5,22 +5,16 @@
 /* General setting for body content */
 
 body {
-    color: #86c232;
-    background-color: #474b4f;
+    color: #ffffff;
     font-family: "Lato", sans-serif;
     font-weight: 400;
     font-size: 1.1rem;
 }
 
-/* Map size */
-
-#map {
-    height: 600px;
-    width: 450px;
-}
-
-#map-container {
-    background-color: #6b6e70;
+.container-fluid {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
 }
 
 /* SPINNER */
@@ -93,11 +87,16 @@ spinner animation found on CodePen: https://codepen.io/judecodes/pen/PrBOvG?&pag
     background: rgba(0, 0, 0, .5);
 }
 
-.fixed-top {
-    margin: 200px;
+/* SEPARATORS */
+
+.separator {
+    background-color: #00bc66;
+    margin: 0;
+    height: 20px;
 }
 
-/* Navbar logo and footer links styling */
+/* NAVBAR */
+/* Navbar logo styling */
 
 .navbar-brand img {
     width: 120%;
@@ -108,53 +107,58 @@ spinner animation found on CodePen: https://codepen.io/judecodes/pen/PrBOvG?&pag
     margin: 0;
 }
 
-footer a {
-    color: #61892f;
-}
-
-footer a:hover {
-    color: #86c232;
-    text-decoration: none;
-}
-
-/* Create separator lines between navbar /  footer and the main content */
-
-nav {
-    border-bottom: solid 2px #61892f;
-    margin: 0 120px;
-}
-
-footer {
-    border-top: solid 2px #61892f;
-    margin: 0 120px;
-}
-
 /* Navbar padding removed to apply bootstrap classes */
 
 .navbar {
     padding: 0;
+    background-color: #222222;
 }
 
-/* --- Navbar --- */
+/* Navbar */
 
 .navbar-nav .nav-link {
-    color: #61892f;
+    color: #9d9d9d;
     text-decoration: none;
     text-transform: uppercase;
     display: block;
 }
 
 .navbar-toggler {
-    color: #61892f;
+    color: #9d9d9d;
 }
 
 .navbar-toggler:hover,
 .navbar-nav .nav-link:hover {
-    color: #86c232;
+    color: #ffffff;
 }
 
 #navbar-container {
     margin: auto;
+}
+
+/* FILTERS SECTION */
+
+#filters-container {
+    background-color: #272727;
+}
+
+/* Edit select menu button look so it doesn't display default arrows and doesnt't round edges */
+
+select {
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    -webkit-appearance: button;
+    -moz-appearance: button;
+
+    width: 45%;
+    padding: 5px 0 5px 10px;
+    border: 0 !important;
+
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' focusable='false' data-prefix='fas' data-icon='sort-down' class='svg-inline--fa fa-sort-down fa-w-10' role='img' viewBox='0 0 320 650'><path fill='white' d='M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41z'/></svg>") no-repeat;
+    background-size: 15px;
+    background-position: calc(100% - 10px) center;
+    background-repeat: no-repeat;
+
 }
 
 /* Display label above input */
@@ -179,6 +183,13 @@ label,
 
 input {
     font-size: 20px;
+}
+
+/* Reset button container */
+
+#reset-container {
+    background-color: #464646;
+    padding: 0;
 }
 
 /* Reset button */
@@ -206,6 +217,31 @@ input {
     outline: none;
 }
 
+/* MAP */
+/* Map size */
+
+#map {
+    height: 600px;
+    width: 450px;
+}
+
+#map-container {
+    background-color: #f6f7f6;
+}
+
+/* Information pop up styling */
+
+#info-content,
+#info-content a {
+    color: #474b4e;
+}
+
+/* RESULTS SECTION */
+
+#results-container {
+    background-color: #f6f7f6;
+}
+
 /* Set cursor to pointer for table content and buttons */
 
 table,
@@ -213,23 +249,48 @@ table,
     cursor: pointer;
 }
 
-/* Edit select menu button look so it doesn't display default arrows and doesnt't round edges */
+/* Centering table in a div */
 
-select {
-    -webkit-border-radius: 0px;
-    border-radius: 0px;
-    -webkit-appearance: button;
-    -moz-appearance: button;
+table {
+    margin: auto;
+    font-weight: 300;
+    color: #ffffff;
+}
 
-    width: 45%;
-    padding: 5px 0 5px 10px;
-    border: 0 !important;
+/* Styling heading for the results table */
 
-    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' focusable='false' data-prefix='fas' data-icon='sort-down' class='svg-inline--fa fa-sort-down fa-w-10' role='img' viewBox='0 0 320 650'><path fill='white' d='M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41z'/></svg>") no-repeat;
-    background-size: 15px;
-    background-position: calc(100% - 10px) center;
-    background-repeat: no-repeat;
+h1,
+h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
 
+h2 {
+    color: #00bc66;
+}
+
+td {
+    cursor: pointer;
+}
+
+/* FOOTER */
+
+/* Footer background */
+
+footer {
+    background-color: #333333;
+}
+
+/* Footer links styling */
+
+footer a {
+    color: #61892f;
+}
+
+footer a:hover {
+    color: #86c232;
+    text-decoration: none;
 }
 
 /* Margin between social media links */
@@ -248,40 +309,14 @@ select {
     font-size: 2.5rem;
 }
 
-/* Centering table in a div */
-
-table {
-    margin: auto;
-    font-weight: 300;
-}
-
-/* Styling heading for the results table */
-
-h1,
-h2 {
-    font-size: 1.8rem;
-    font-weight: 700;
-}
-
-td {
-    cursor: pointer;
-}
-
-/* Information pop up styling */
-
-#info-content,
-#info-content a {
-    color: #474b4e;
-}
-
 /* BACK TO TOP BUTTON */
 /* Back to top button inspired by this Codepen solution: https://codepen.io/matthewcain/pen/ZepbeR */
 
 #button {
     display: inline-block;
     background-color: transparent;
-    color: #222629;
-    border: 1px solid #222629;
+    color: #222222;
+    border: 1px solid #222222;
     width: 50px;
     height: 50px;
     text-align: center;
@@ -306,8 +341,9 @@ td {
 }
 
 #button:active {
-    color: #6b6e70;
-    background-color: #222629;
+    color: #222222;
+    background-color: #00bc66;
+    border-color: #00bc66;
 }
 
 #button.show {
@@ -344,7 +380,7 @@ td {
 @media only screen and (max-width: 768px) {
 
     select {
-        width: 40%;
+        width: 80%;
     }
 
 }
@@ -402,8 +438,9 @@ td {
     
     #button:hover {
         cursor: pointer;
-        background-color: #222629;
-        color: #6b6e70;
+        background-color: #00bc66;
+        color: #222222;
+        border-color: #00bc66;
     }
     
 }
