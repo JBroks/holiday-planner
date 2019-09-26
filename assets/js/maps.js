@@ -291,7 +291,7 @@ function addResult(result, i) {
     var markerIcon = MARKER_PATH + markerLetter + '.png';
 
     var tr = document.createElement('tr');
-    tr.style.backgroundColor = (i % 2 === 0 ? '#6b6e70' : '#474b4f');
+    tr.style.backgroundColor = (i % 2 === 0 ? '#272727' : '#464646');
     tr.onclick = function() {
         google.maps.event.trigger(markers[i], 'click');
     };
