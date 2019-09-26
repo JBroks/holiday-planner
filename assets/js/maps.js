@@ -2,7 +2,7 @@ var google;
 var countryRestrict;
 var autocomplete;
 var map, places, infoWindow;
-let options = {
+var options = {
     'hotel': {
         types: ['lodging']
     },
@@ -164,11 +164,16 @@ function initMap() {
 
 function typeWithoutPlace() {
     var city = document.getElementById('city-input').value;
-    if (city == '') {
-         Swal.fire('Information missing', 'Please enter a city name first!', 'info');
+    var countrySelect = document.getElementById('country').value;
+
+    if (countrySelect == 'default' && city == '') {
+        Swal.fire('Information missing', 'Please select a country and enter a city name first!', 'info');
+    }
+    else if (countrySelect != 'default' && city == '') {
+        Swal.fire('Information missing', 'Please enter a city name first!', 'info');
     }
     else {
-        document.getElementById('place-type').addEventListener('change', search);
+        search();
     }
 }
 
