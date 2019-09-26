@@ -1,5 +1,4 @@
 var google;
-
 var countryRestrict;
 var autocomplete;
 var map, places, infoWindow;
@@ -111,21 +110,21 @@ function initMap() {
         content: document.getElementById('info-content')
     });
 
-// Spinner hide method
-    
+    // Spinner hide method
+
     /**
      * This is jQuery method that hides the overlay div containing spinner
      * When map is loaded spinner with overlay will be hidden
      */
-     
+
     $("#overlay").hide();
-    
-    
+
+
     /**
      * Create the autocomplete object and associate it with the UI input control.
      * Restrict the search to the default country, and to place type "cities".
      */
-     
+
     autocomplete = new google.maps.places.Autocomplete(
         (document.getElementById('city-input')), {
             types: ['(cities)'],
@@ -138,20 +137,20 @@ function initMap() {
     /**
      * Add a DOM event listener to react when the user selects a place type.
      */
-     
+
     document.getElementById('place-type').addEventListener('change', typeWithoutPlace);
 
     /**
      * Add a DOM event listener to react when the user selects a country.
      */
-     
+
     document.getElementById('country').addEventListener(
         'change', setAutocompleteCountry);
 
     /**
      * Add a DOM event listener to react when the user clicks the reset button.
      */
-     
+
     document.getElementById('reset-button').addEventListener('click', resetButton);
 
 }
@@ -162,10 +161,11 @@ function initMap() {
  * Function pops-up an alert saying that city has to be specified first
  * If city is specified lintener will call search function
  */
+
 function typeWithoutPlace() {
     var city = document.getElementById('city-input').value;
     if (city == '') {
-        alert('Please enter a city name first!');
+         Swal.fire('Information missing', 'Please enter a city name first!', 'info');
     }
     else {
         document.getElementById('place-type').addEventListener('change', search);
@@ -176,7 +176,7 @@ function typeWithoutPlace() {
  * When the user selects a city, get the place details for the city and
  * zoom the map in on the city.
  */
- 
+
 function onPlaceChanged() {
     var place = autocomplete.getPlace();
     if (place.geometry) {
@@ -186,10 +186,17 @@ function onPlaceChanged() {
     }
 }
 
+
+/**
+ * Function that checks if default value of place type (placeholder) is selected
+ * if yes it does nothing
+ * when one of valid options is selected it calls the search() function
+ */
+
 function onDefaultType() {
     var option = document.getElementById('place-type').value;
     if (option == 'default') {
-       // do nothing 
+        // do nothing 
     }
     else {
         search();
@@ -199,7 +206,7 @@ function onDefaultType() {
 /**
  * Search for place in the selected city, within the viewport of the map.
  */
- 
+
 function search() {
     var option = document.getElementById('place-type').value;
     var search = {
@@ -239,7 +246,7 @@ function search() {
 /**
  * Function clears markers
  */
- 
+
 function clearMarkers() {
     for (var i = 0; i < markers.length; i++) {
         if (markers[i]) {
@@ -315,7 +322,7 @@ function clearResults() {
  * Get the place details. Show the information in an info window,
  * anchored on the marker for the place that the user selected.
  */
- 
+
 function showInfoWindow() {
     var marker = this;
     places.getDetails({ placeId: marker.placeResult.place_id },
@@ -331,7 +338,7 @@ function showInfoWindow() {
 /**
  * Load the place information into the HTML elements used by the info window.
  */
- 
+
 function buildIWContent(place) {
     document.getElementById('iw-icon').innerHTML = '<img class="icon" ' +
         'src="' + place.icon + '"/>';
@@ -353,7 +360,7 @@ function buildIWContent(place) {
      * to indicate the rating the hotel / restaurant has earned, and a empty/outlined star ('&#9734;')
      * for the rating points not achieved.
      */
-     
+
     if (place.rating) {
         var ratingHtml = '';
         for (var i = 0; i < 5; i++) {
@@ -375,7 +382,7 @@ function buildIWContent(place) {
      * The regexp isolates the first part of the URL (domain plus subdomain)
      * to give a short URL for displaying in the info window.
      */
-     
+
     if (place.website) {
         var fullUrl = place.website;
         var website = hostnameRegexp.exec(place.website);
@@ -395,7 +402,7 @@ function buildIWContent(place) {
  * Functions supporting the reset process
  * Functions clear autocomplete and sets select menus to the default settings
  */
- 
+
 function clearAutocomplete() {
     document.getElementById('city-input').value = '';
 }
