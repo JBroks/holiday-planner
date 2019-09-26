@@ -3,7 +3,7 @@ var google;
 var countryRestrict;
 var autocomplete;
 var map, places, infoWindow;
-var options = {
+let options = {
     'hotel': {
         types: ['lodging']
     },
@@ -121,8 +121,11 @@ function initMap() {
     $("#overlay").hide();
     
     
-    // Create the autocomplete object and associate it with the UI input control.
-    // Restrict the search to the default country, and to place type "cities".
+    /**
+     * Create the autocomplete object and associate it with the UI input control.
+     * Restrict the search to the default country, and to place type "cities".
+     */
+     
     autocomplete = new google.maps.places.Autocomplete(
         (document.getElementById('city-input')), {
             types: ['(cities)'],
@@ -132,20 +135,42 @@ function initMap() {
 
     autocomplete.addListener('place_changed', onPlaceChanged);
 
-    // Add a DOM event listener to react when the user selects a place type.
-    document.getElementById('place-type').addEventListener('change', search);
+    /**
+     * Add a DOM event listener to react when the user selects a place type.
+     */
+     
+    document.getElementById('place-type').addEventListener('change', typeWithoutPlace);
 
-    // Add a DOM event listener to react when the user selects a country.
+    /**
+     * Add a DOM event listener to react when the user selects a country.
+     */
+     
     document.getElementById('country').addEventListener(
         'change', setAutocompleteCountry);
 
-    // Add a DOM event listener to react when the user clicks the reset button.  
+    /**
+     * Add a DOM event listener to react when the user clicks the reset button.
+     */
+     
     document.getElementById('reset-button').addEventListener('click', resetButton);
 
 }
 
-// When the user selects a city, get the place details for the city and
-// zoom the map in on the city.
+function typeWithoutPlace() {
+    var city = document.getElementById('city-input').value;
+    if (city == '') {
+        alert('Please enter a city name first!');
+    }
+    else {
+        document.getElementById('place-type').addEventListener('change', search);
+    }
+}
+
+/**
+ * When the user selects a city, get the place details for the city and
+ * zoom the map in on the city.
+ */
+ 
 function onPlaceChanged() {
     var place = autocomplete.getPlace();
     if (place.geometry) {
@@ -155,7 +180,10 @@ function onPlaceChanged() {
     }
 }
 
-// Search for place in the selected city, within the viewport of the map.
+/**
+ * Search for place in the selected city, within the viewport of the map.
+ */
+ 
 function search() {
     var option = document.getElementById('place-type').value;
     var search = {
@@ -201,8 +229,9 @@ function clearMarkers() {
     markers = [];
 }
 
-// Set the country restriction based on user input.
-// Also center and zoom the map on the given country.
+/** Set the country restriction based on user input.
+ * Also center and zoom the map on the given country.
+ */
 
 function setAutocompleteCountry() {
 
@@ -261,8 +290,11 @@ function clearResults() {
     }
 }
 
-// Get the place details. Show the information in an info window,
-// anchored on the marker for the place that the user selected.
+/**
+ * Get the place details. Show the information in an info window,
+ * anchored on the marker for the place that the user selected.
+ */
+ 
 function showInfoWindow() {
     var marker = this;
     places.getDetails({ placeId: marker.placeResult.place_id },
@@ -274,7 +306,11 @@ function showInfoWindow() {
             buildIWContent(place);
         });
 }
-// Load the place information into the HTML elements used by the info window.
+
+/**
+ * Load the place information into the HTML elements used by the info window.
+ */
+ 
 function buildIWContent(place) {
     document.getElementById('iw-icon').innerHTML = '<img class="icon" ' +
         'src="' + place.icon + '"/>';
@@ -291,9 +327,12 @@ function buildIWContent(place) {
         document.getElementById('iw-phone-row').style.display = 'none';
     }
 
-    // Assign a five-star rating to the hotel / restaurant, using a yellow star ('&#11088;')
-    // to indicate the rating the hotel / restaurant has earned, and a empty/outlined star ('&#9734;')
-    // for the rating points not achieved.
+    /**
+     * Assign a five-star rating to the hotel / restaurant, using a yellow star ('&#11088;')
+     * to indicate the rating the hotel / restaurant has earned, and a empty/outlined star ('&#9734;')
+     * for the rating points not achieved.
+     */
+     
     if (place.rating) {
         var ratingHtml = '';
         for (var i = 0; i < 5; i++) {
@@ -311,8 +350,11 @@ function buildIWContent(place) {
         document.getElementById('iw-rating-row').style.display = 'none';
     }
 
-    // The regexp isolates the first part of the URL (domain plus subdomain)
-    // to give a short URL for displaying in the info window.
+    /**
+     * The regexp isolates the first part of the URL (domain plus subdomain)
+     * to give a short URL for displaying in the info window.
+     */
+     
     if (place.website) {
         var fullUrl = place.website;
         var website = hostnameRegexp.exec(place.website);
@@ -351,7 +393,9 @@ function resetButton() {
 }
 
 
-// Fix to bootstrap menu issue (not collapsing after clicking a link)
+/**
+ * Fix to bootstrap menu issue (not collapsing after clicking a link)
+ */
 
 $(".navbar-nav li a").click(function(event) {
     if (!$(this).parent().hasClass('dropdown'))
