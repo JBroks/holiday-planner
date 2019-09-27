@@ -1,12 +1,12 @@
 /* Import fonts */
 
-@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600&display=swap");
 
 /* General setting for body content */
 
 body {
     color: #ffffff;
-    font-family: "Lato", sans-serif;
+    font-family: "Source Sans Pro", sans-serif;
     font-weight: 400;
     font-size: 1.1rem;
 }
@@ -111,7 +111,7 @@ spinner animation found on CodePen: https://codepen.io/judecodes/pen/PrBOvG?&pag
 
 .navbar {
     padding: 0;
-    background-color: #333333;
+    background-color: #222222;
 }
 
 /* Navbar */
@@ -139,7 +139,7 @@ spinner animation found on CodePen: https://codepen.io/judecodes/pen/PrBOvG?&pag
 /* FILTERS SECTION */
 
 #filters-container {
-    background-color: #272727;
+    background-color: #333333;
 }
 
 /* Edit select menu button look so it doesn't display default arrows and doesnt't round edges */
@@ -188,7 +188,7 @@ input {
 /* Reset button container */
 
 #reset-container {
-    background-color: #272727;
+    background-color: #333333;
     padding: 0;
 }
 
@@ -210,11 +210,25 @@ input {
     background-color: #00703c;
 }
 
-/* Swich of frame on focus */
+#reset-button {
+    color: #fff;
+    background-color: #222222;
+    border: none;
+}
+
+#reset-button:hover {
+    background-color: #00bc66;
+}
+
+/* Swich of frame on focus and change color for input focus */
 
 .button:focus,
 .navbar-toggler:focus {
     outline: none;
+}
+
+input:focus {
+    outline-color: #00bc66;
 }
 
 /* MAP */
@@ -262,7 +276,7 @@ table {
 h1,
 h2 {
     font-size: 1.8rem;
-    font-weight: 700;
+    font-weight: 600;
     text-transform: uppercase;
 }
 
@@ -285,11 +299,11 @@ footer {
 /* Footer links styling */
 
 footer a {
-    color: #00bc66;
+    color: #f6f7f6;
 }
 
 footer a:hover {
-    color: #00703c;
+    color: #00bc66;
     text-decoration: none;
 }
 
