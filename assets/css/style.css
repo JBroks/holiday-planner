@@ -342,7 +342,7 @@ footer a:hover {
 
 #button:active {
     background-color: #00bc66;
-    border-color: #00bc66;
+    border: none;
 }
 
 #button.show {
@@ -438,7 +438,7 @@ footer a:hover {
     #button:hover {
         cursor: pointer;
         background-color: #00bc66;
-        border-color: #00bc66;
+        border: none;
     }
     
 }
