@@ -329,8 +329,8 @@ footer a:hover {
 #button {
     display: inline-block;
     background-color: transparent;
-    color: #272727;
-    border: 1px solid #272727;
+    color: #00bc66;
+    border: 1px solid #00bc66;
     width: 50px;
     height: 50px;
     text-align: center;
@@ -356,6 +356,7 @@ footer a:hover {
 
 #button:active {
     background-color: #00bc66;
+    color: #ffffff;
     border: none;
 }
 
@@ -452,6 +453,7 @@ footer a:hover {
     #button:hover {
         cursor: pointer;
         background-color: #00bc66;
+        color: #ffffff;
         border: none;
     }
     
