@@ -27,7 +27,7 @@ spinner animation found on CodePen: https://codepen.io/judecodes/pen/PrBOvG?&pag
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    border-top: 2px solid #608930;
+    border-top: 2px solid #00bc66;
     border-bottom: 2px solid transparent;
     border-left: 2px solid transparent;
     border-right: 2px solid transparent;
@@ -46,7 +46,7 @@ spinner animation found on CodePen: https://codepen.io/judecodes/pen/PrBOvG?&pag
     content: "";
     position: absolute;
     border-radius: 50%;
-    border-top: 2px solid #608930;
+    border-top: 2px solid #00bc66;
     border-bottom: 2px solid transparent;
     border-left: 2px solid transparent;
     border-right: 2px solid transparent;
@@ -57,7 +57,7 @@ spinner animation found on CodePen: https://codepen.io/judecodes/pen/PrBOvG?&pag
     left: 7px;
     width: 178px;
     height: 178px;
-    border-top: 2px solid #608930;
+    border-top: 2px solid #c1dccb;
     animation: spin 2s linear infinite forwards;
 }
 
@@ -66,7 +66,7 @@ spinner animation found on CodePen: https://codepen.io/judecodes/pen/PrBOvG?&pag
     left: 16px;
     width: 160px;
     height: 160px;
-    border-top: 2px solid #608930;
+    border-top: 2px solid #32713d;
     animation: spin 1s linear infinite forwards;
 }
 
