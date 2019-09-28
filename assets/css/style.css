@@ -216,7 +216,7 @@ input {
     color: #fff;
     background-color: #222222;
     border: none;
-    padding: 10px 50px;
+    padding: 10px 60px;
 }
 
 #reset-button:hover {
@@ -455,6 +455,10 @@ footer {
 
     select {
         width: 70%;
+    }
+    
+    table {
+        font-size: 0.9rem;
     }
 
 }
