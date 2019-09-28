@@ -241,6 +241,7 @@ input:focus {
 #map {
     height: 600px;
     width: 450px;
+    box-shadow: 10px 10px 5px -8px rgba(34,34,34,1);
 }
 
 #map-container {
