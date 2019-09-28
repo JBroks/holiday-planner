@@ -9,6 +9,7 @@ body {
     font-family: "Source Sans Pro", sans-serif;
     font-weight: 400;
     font-size: 1.1rem;
+    padding-top: 100px;
 }
 
 .container-fluid {
@@ -101,7 +102,7 @@ spinner animation found on CodePen: https://codepen.io/judecodes/pen/PrBOvG?&pag
 /* Navbar logo styling */
 
 .navbar-brand img {
-    width: 120%;
+    width: 100%;
     height: 80%;
 }
 
@@ -241,7 +242,7 @@ input:focus {
 #map {
     height: 600px;
     width: 450px;
-    box-shadow: 10px 10px 5px -8px rgba(34,34,34,1);
+    box-shadow: 10px 10px 5px -8px rgba(34, 34, 34, 1);
 }
 
 #map-container {
@@ -323,7 +324,7 @@ footer {
 
 .list-inline-item .fa {
     font-size: 1.4rem;
-   color: #f6f7f6;
+    color: #f6f7f6;
     display: inline-block;
     padding: 10px;
     line-height: 1;
@@ -423,10 +424,11 @@ footer {
         width: 35%;
     }
 
-}
+    /* Padding adjusted to accommodate fixed navbar on smaller displays */
+    body {
+        padding-top: 150px
+    }
 
-.navbar-brand img {
-    width: 100%;
 }
 
 @media only screen and (max-width: 576px) {
@@ -456,7 +458,7 @@ footer {
     select {
         width: 70%;
     }
-    
+
     table {
         font-size: 0.9rem;
     }
