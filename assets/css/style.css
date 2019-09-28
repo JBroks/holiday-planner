@@ -18,6 +18,7 @@ body {
 }
 
 /* SPINNER */
+
 /* Spinner on data loading
 spinner animation found on CodePen: https://codepen.io/judecodes/pen/PrBOvG?&page=1 */
 
@@ -96,6 +97,7 @@ spinner animation found on CodePen: https://codepen.io/judecodes/pen/PrBOvG?&pag
 }
 
 /* NAVBAR */
+
 /* Navbar logo styling */
 
 .navbar-brand img {
@@ -134,6 +136,12 @@ spinner animation found on CodePen: https://codepen.io/judecodes/pen/PrBOvG?&pag
 
 #navbar-container {
     margin: auto;
+}
+
+/* Navbar menu button size increase */
+
+.fa-bars {
+    font-size: 2.5rem;
 }
 
 /* FILTERS SECTION */
@@ -192,12 +200,6 @@ input {
     padding: 0;
 }
 
-/* Reset button */
-
-#reset-button {
-    padding: 8px 20px;
-}
-
 /* Styling for buttons */
 
 .button {
@@ -214,6 +216,7 @@ input {
     color: #fff;
     background-color: #222222;
     border: none;
+    padding: 10px 50px;
 }
 
 #reset-button:hover {
@@ -232,6 +235,7 @@ input:focus {
 }
 
 /* MAP */
+
 /* Map size */
 
 #map {
@@ -266,6 +270,7 @@ table,
 /* Centering table in a div */
 
 table {
+    width: 80%;
     margin: auto;
     font-weight: 300;
     color: #ffffff;
@@ -298,11 +303,11 @@ footer {
 
 /* Footer links styling */
 
-footer a {
+.copyrights a {
     color: #f6f7f6;
 }
 
-footer a:hover {
+.copyrights a:hover {
     color: #00bc66;
     text-decoration: none;
 }
@@ -313,17 +318,24 @@ footer a:hover {
     margin-right: 2rem;
 }
 
-/* Social media icons and navbar button size increase */
+/* Social media icons styling*/
 
 .list-inline-item .fa {
     font-size: 1.4rem;
+   color: #f6f7f6;
+    display: inline-block;
+    padding: 10px;
+    line-height: 1;
+    text-decoration: none;
+    background-color: #222222;
 }
 
-.fa-bars {
-    font-size: 2.5rem;
+.list-inline-item .fa:hover {
+    background-color: #00bc66;
 }
 
 /* BACK TO TOP BUTTON */
+
 /* Back to top button inspired by this Codepen solution: https://codepen.io/matthewcain/pen/ZepbeR */
 
 #button {
@@ -449,12 +461,12 @@ footer a:hover {
 /* Solution to sticky hover on mobile devices found here: https://medium.com/@ferie/detect-a-touch-device-with-only-css-9f8e30fa1134 */
 
 @media (hover: hover) {
-    
+
     #button:hover {
         cursor: pointer;
         background-color: #00bc66;
         color: #ffffff;
         border: none;
     }
-    
+
 }
