@@ -2,6 +2,14 @@
 
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600&display=swap");
 
+/* HTML */
+
+/* Scroll padding applied to fix issue with navbar overlapping the heading on scroll to anchor - for safari and mozilla */
+
+html {
+    scroll-padding-top: 108px;
+}
+
 /* BODY */
 
 /* General setting for body content.
@@ -436,7 +444,7 @@ footer {
     }
 
     /* Padding adjusted to accommodate fixed navbar on smaller displays */
-    body {
+    body, html {
         padding-top: 150px;
         scroll-padding-top: 150px;
     }
