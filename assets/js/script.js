@@ -1,4 +1,4 @@
-// Back to top button
+// BACK TO TOP BUTTON
 
 /**
  * Function implements smooth scrolling back to top after clicking the button
@@ -20,12 +20,13 @@ btn.on('click', function(d) {
   $('html, body').animate({ scrollTop: 0 }, '300');
 });
 
+// COLLAPSE NAV MENU
 
 /**
  * Fix to bootstrap menu issue (not collapsing after clicking a link)
  */
 
 $(".navbar-nav li a").click(function(event) {
-    if (!$(this).parent().hasClass('dropdown'))
-        $(".navbar-collapse").collapse('hide');
+  if (!$(this).parent().hasClass('dropdown'))
+    $(".navbar-collapse").collapse('hide');
 });

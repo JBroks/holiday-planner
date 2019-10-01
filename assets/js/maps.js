@@ -1,8 +1,7 @@
-var google;
-var countryRestrict;
-var autocomplete;
-var map, places, infoWindow;
-var options = {
+let countryRestrict;
+let autocomplete;
+let map, places, infoWindow;
+let options = {
     'hotel': {
         types: ['lodging']
     },
@@ -13,7 +12,7 @@ var options = {
         types: ['museum', 'art_gallery', 'park', 'amusement_park']
     }
 };
-var countries = {
+let countries = {
     'default': {
         center: { lat: 45.4, lng: 0 },
         zoom: 2.9
@@ -67,9 +66,9 @@ var countries = {
         zoom: 4.5
     }
 };
-var markers = [];
-var MARKER_PATH = 'https://developers.google.com/maps/documentation/javascript/images/marker_green';
-var hostnameRegexp = new RegExp('^https?://.+?/');
+let markers = [];
+let MARKER_PATH = 'https://developers.google.com/maps/documentation/javascript/images/marker_green';
+let hostnameRegexp = new RegExp('^https?://.+?/');
 
 // Spinner show method
 
@@ -79,6 +78,13 @@ var hostnameRegexp = new RegExp('^https?://.+?/');
  */
 $("#overlay").show();
 
+// MAP INIT
+
+/**
+ * Function initiating google map API
+ * Function contains event listeners that monitor changes in filters
+ */
+ 
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
         zoom: countries['default'].zoom,
@@ -119,6 +125,9 @@ function initMap() {
 
     $("#overlay").hide();
 
+    // EVENT LISTENERS
+
+    // Autocomplete window
 
     /**
      * Create the autocomplete object and associate it with the UI input control.
@@ -134,18 +143,23 @@ function initMap() {
 
     autocomplete.addListener('place_changed', onPlaceChanged);
 
+    // Place type select menu
+
     /**
      * Add a DOM event listener to react when the user selects a place type.
      */
 
     document.getElementById('place-type').addEventListener('change', typeWithoutPlace);
 
+    // Country select menu
+
     /**
      * Add a DOM event listener to react when the user selects a country.
      */
 
-    document.getElementById('country').addEventListener(
-        'change', setAutocompleteCountry);
+    document.getElementById('country').addEventListener('change', setAutocompleteCountry);
+
+    // Reset button
 
     /**
      * Add a DOM event listener to react when the user clicks the reset button.
@@ -155,6 +169,9 @@ function initMap() {
 
 }
 
+// MISING INFORMATION ALERTS
+
+// Function checking missing information about location
 
 /**
  * Function added to avoid dropping markers if location (city) is not specified
@@ -163,8 +180,8 @@ function initMap() {
  */
 
 function typeWithoutPlace() {
-    var city = document.getElementById('city-input').value;
-    var countrySelect = document.getElementById('country').value;
+    let city = document.getElementById('city-input').value;
+    let countrySelect = document.getElementById('country').value;
 
     if (countrySelect == 'default' && city == '') {
         Swal.fire('Information missing', 'Please select a country and enter a city name first!', 'info');
@@ -179,13 +196,17 @@ function typeWithoutPlace() {
     }
 }
 
+// CITY FILTER
+
+// Zoom to specified city
+
 /**
  * When the user selects a city, get the place details for the city and
  * zoom the map in on the city.
  */
 
 function onPlaceChanged() {
-    var place = autocomplete.getPlace();
+    let place = autocomplete.getPlace();
     if (place.geometry) {
         map.panTo(place.geometry.location);
         map.setZoom(15);
@@ -193,6 +214,9 @@ function onPlaceChanged() {
     }
 }
 
+// PLACE TYPE FILTER
+
+// Check if place type is selected
 
 /**
  * Function that checks if default value of place type (placeholder) is selected
@@ -201,19 +225,23 @@ function onPlaceChanged() {
  */
 
 function onDefaultType() {
-    var option = document.getElementById('place-type').value;
+    let option = document.getElementById('place-type').value;
     if (option != 'default') {
         search();
     }
 }
+
+// SEARCH FUNCTION
+
+// Search for place within specified types
 
 /**
  * Search for place in the selected city, within the viewport of the map.
  */
 
 function search() {
-    var option = document.getElementById('place-type').value;
-    var search = {
+    let option = document.getElementById('place-type').value;
+    let search = {
         bounds: map.getBounds(),
         types: options[option].types
     };
@@ -223,21 +251,29 @@ function search() {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
             clearResults();
             clearMarkers();
+            
             // Add heading for the results table
+            
             document.getElementById('results-heading').innerHTML = "Results";
+            
             // Create a marker for each place (accommodation/restaurant/attraction) found, and
             // assign a letter of the alphabetic to each marker icon.
-            for (var i = 0; i < results.length; i++) {
-                var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
-                var markerIcon = MARKER_PATH + markerLetter + '.png';
+            
+            for (let i = 0; i < results.length; i++) {
+                let markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
+                let markerIcon = MARKER_PATH + markerLetter + '.png';
+                
                 // Use marker animation to drop the icons incrementally on the map.
+                
                 markers[i] = new google.maps.Marker({
                     position: results[i].geometry.location,
                     animation: google.maps.Animation.DROP,
                     icon: markerIcon
                 });
+                
                 // If the user clicks a marker, show the details of that place option
                 // in an info window.
+                
                 markers[i].placeResult = results[i];
                 google.maps.event.addListener(markers[i], 'click', showInfoWindow);
                 setTimeout(dropMarker(i), i * 100);
@@ -247,12 +283,16 @@ function search() {
     });
 }
 
+// CLEAR MARKER
+
+// Clear markers function
+
 /**
- * Function clears markers
+ * Function clears markers displayed on the map
  */
 
 function clearMarkers() {
-    for (var i = 0; i < markers.length; i++) {
+    for (let i = 0; i < markers.length; i++) {
         if (markers[i]) {
             markers[i].setMap(null);
         }
@@ -260,13 +300,17 @@ function clearMarkers() {
     markers = [];
 }
 
+// COUNTRY
+
+// Country restriction function
+
 /** Set the country restriction based on user input.
  * Also center and zoom the map on the given country.
  */
 
 function setAutocompleteCountry() {
 
-    var country = document.getElementById('country').value;
+    let country = document.getElementById('country').value;
     autocomplete.setComponentRestrictions({ 'country': country });
     map.setCenter(countries[country].center);
     map.setZoom(countries[country].zoom);
@@ -278,6 +322,9 @@ function setAutocompleteCountry() {
 
 }
 
+// DROP MARKERS
+
+// Function dropping markers
 
 function dropMarker(i) {
     return function() {
@@ -285,26 +332,35 @@ function dropMarker(i) {
     };
 }
 
-function addResult(result, i) {
-    var results = document.getElementById('results');
-    var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
-    var markerIcon = MARKER_PATH + markerLetter + '.png';
+// RESULTS TABLE
 
-    var tr = document.createElement('tr');
+// Function generating results
+
+/**
+ * Function that generates a table with results besed on specified filters
+ * Table displays marker, place name and address
+ */
+
+function addResult(result, i) {
+    let results = document.getElementById('results');
+    let markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
+    let markerIcon = MARKER_PATH + markerLetter + '.png';
+
+    let tr = document.createElement('tr');
     tr.style.backgroundColor = (i % 2 === 0 ? '#272727' : '#464646');
     tr.onclick = function() {
         google.maps.event.trigger(markers[i], 'click');
     };
 
-    var iconTd = document.createElement('td');
-    var nameTd = document.createElement('td');
-    var addressTd = document.createElement('td');
-    var icon = document.createElement('img');
+    let iconTd = document.createElement('td');
+    let nameTd = document.createElement('td');
+    let addressTd = document.createElement('td');
+    let icon = document.createElement('img');
     icon.src = markerIcon;
     icon.setAttribute('class', 'placeIcon');
     icon.setAttribute('className', 'placeIcon');
-    var name = document.createTextNode(result.name);
-    var address = document.createTextNode(result.vicinity);
+    let name = document.createTextNode(result.name);
+    let address = document.createTextNode(result.vicinity);
     iconTd.appendChild(icon);
     nameTd.appendChild(name);
     addressTd.appendChild(address);
@@ -315,12 +371,22 @@ function addResult(result, i) {
     results.appendChild(tr);
 }
 
+// Function clearing results
+
+/**
+ * Function that removes the results from the results table
+ */
+
 function clearResults() {
-    var results = document.getElementById('results');
+    let results = document.getElementById('results');
     while (results.childNodes[0]) {
         results.removeChild(results.childNodes[0]);
     }
 }
+
+// INFORMATION WINDOW
+
+// Function generating information window
 
 /**
  * Get the place details. Show the information in an info window,
@@ -328,7 +394,7 @@ function clearResults() {
  */
 
 function showInfoWindow() {
-    var marker = this;
+    let marker = this;
     places.getDetails({ placeId: marker.placeResult.place_id },
         function(place, status) {
             if (status !== google.maps.places.PlacesServiceStatus.OK) {
@@ -338,6 +404,8 @@ function showInfoWindow() {
             buildIWContent(place);
         });
 }
+
+// Function that adds information into the information wiindow
 
 /**
  * Load the place information into the HTML elements used by the info window.
@@ -366,8 +434,8 @@ function buildIWContent(place) {
      */
 
     if (place.rating) {
-        var ratingHtml = '';
-        for (var i = 0; i < 5; i++) {
+        let ratingHtml = '';
+        for (let i = 0; i < 5; i++) {
             if (place.rating < (i + 0.5)) {
                 ratingHtml += '&#9734;';
             }
@@ -388,8 +456,8 @@ function buildIWContent(place) {
      */
 
     if (place.website) {
-        var fullUrl = place.website;
-        var website = hostnameRegexp.exec(place.website);
+        let fullUrl = place.website;
+        let website = hostnameRegexp.exec(place.website);
         if (website === null) {
             website = 'http://' + place.website + '/';
             fullUrl = website;
@@ -401,6 +469,10 @@ function buildIWContent(place) {
         document.getElementById('iw-website-row').style.display = 'none';
     }
 }
+
+// RESET
+
+// Reset functions
 
 /**
  * Functions supporting the reset process
@@ -419,6 +491,7 @@ function clearPlaceTypeSelection() {
     document.getElementById('place-type').value = 'default';
 }
 
+// Function activated on reset button
 
 /**
  * Function to reset all settings applied
