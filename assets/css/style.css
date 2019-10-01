@@ -124,6 +124,7 @@ spinner animation found on CodePen: https://codepen.io/judecodes/pen/PrBOvG?&pag
     text-decoration: none;
     text-transform: uppercase;
     display: block;
+    
 }
 
 .navbar-toggler {
@@ -256,6 +257,7 @@ input:focus {
     color: #474b4e;
 }
 
+
 /* RESULTS SECTION */
 
 #results-container {
@@ -264,14 +266,14 @@ input:focus {
 
 /* Set cursor to pointer for table content and buttons */
 
-table,
+#resultsTable,
 .button {
     cursor: pointer;
 }
 
 /* Centering table in a div */
 
-table {
+#resultsTable {
     width: 80%;
     margin: auto;
     font-weight: 300;
@@ -459,7 +461,7 @@ footer {
         width: 70%;
     }
 
-    table {
+    #resultsTable {
         font-size: 0.9rem;
     }
 

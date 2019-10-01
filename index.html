@@ -17,7 +17,6 @@
 
 <body>
 
-
     <!-- Spinner on map loading -->
     <div id="overlay">
         <div class="loader"></div>
@@ -56,6 +55,7 @@
 
         <!-- Filters -->
         <section class="container-fluid">
+
             <div class="row py-4" id="filters-container">
 
                 <div class="col-12 text-center mb-4">
@@ -63,6 +63,7 @@
                 </div>
 
                 <!-- Country selector -->
+
                 <div class="col-md-4 text-center" id="search-country">
                     <label for="country" accesskey="c">Country:</label>
                     <select class="button" name="country-select" id="country">
@@ -101,9 +102,11 @@
             </div>
 
             <!-- Reset button -->
+
             <div class="container-fluid" id="reset-container">
                 <div class="col-12 py-4 text-center"><button class="button" id="reset-button" aria-label="reset">Reset</button></div>
             </div>
+
         </section>
 
         <!-- Separator -->
@@ -112,44 +115,50 @@
 
         <!-- Map -->
         <section class="container-fluid">
+
             <div class="row pt-4 pb-4 justify-content-center" id="map-container">
                 <div class="col-12 text-center mb-4">
                     <h2 id="map-heading">Map</h2>
                 </div>
                 <div class="col-10" id="map"></div>
             </div>
-        </section>
-        <!-- Info content pop up -->
 
-        <div style="display: none">
-            <div id="info-content">
-                <table>
-                    <tr id="iw-url-row" class="iw_table_row">
-                        <td id="iw-icon" class="iw_table_icon"></td>
-                        <td id="iw-url"></td>
-                    </tr>
-                    <tr id="iw-address-row" class="iw_table_row">
-                        <td class="iw_attribute_name">Address:</td>
-                        <td id="iw-address"></td>
-                    </tr>
-                    <tr id="iw-phone-row" class="iw_table_row">
-                        <td class="iw_attribute_name">Telephone:</td>
-                        <td id="iw-phone"></td>
-                    </tr>
-                    <tr id="iw-rating-row" class="iw_table_row">
-                        <td class="iw_attribute_name">Rating:</td>
-                        <td id="iw-rating"></td>
-                    </tr>
-                    <tr id="iw-website-row" class="iw_table_row">
-                        <td class="iw_attribute_name">Website:</td>
-                        <td id="iw-website"></td>
-                    </tr>
-                </table>
+
+            <!-- Info content pop up -->
+
+            <div style="display: none">
+                <div id="info-content">
+                    <table>
+                        <tr id="iw-url-row" class="iw_table_row">
+                            <td id="iw-icon" class="iw_table_icon"></td>
+                            <td id="iw-url"></td>
+                        </tr>
+                        <tr id="iw-address-row" class="iw_table_row">
+                            <td class="iw_attribute_name">Address:</td>
+                            <td id="iw-address"></td>
+                        </tr>
+                        <tr id="iw-phone-row" class="iw_table_row">
+                            <td class="iw_attribute_name">Telephone:</td>
+                            <td id="iw-phone"></td>
+                        </tr>
+                        <tr id="iw-rating-row" class="iw_table_row">
+                            <td class="iw_attribute_name">Rating:</td>
+                            <td id="iw-rating"></td>
+                        </tr>
+                        <tr id="iw-website-row" class="iw_table_row">
+                            <td class="iw_attribute_name">Website:</td>
+                            <td id="iw-website"></td>
+                        </tr>
+                    </table>
+                </div>
             </div>
-        </div>
-
+            
+        </section>
+        
         <!-- Table containing results -->
+        
         <section class="container-fluid">
+            
             <div class="row pb-4 justify-content-center" id="results-container">
                 <div class="col-12 text-center mb-4">
                     <h2 id="results-heading"></h2>
@@ -162,6 +171,7 @@
                     </div>
                 </div>
             </div>
+            
         </section>
 
         <!-- Separator -->
