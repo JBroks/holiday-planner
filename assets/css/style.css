@@ -2,7 +2,10 @@
 
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600&display=swap");
 
-/* General setting for body content */
+/* BODY */
+
+/* General setting for body content.
+Scroll padding applied to fix issue with navbar overlapping the heading on scroll to anchor */
 
 body {
     color: #ffffff;
@@ -118,7 +121,7 @@ spinner animation found on CodePen: https://codepen.io/judecodes/pen/PrBOvG?&pag
     background-color: #222222;
 }
 
-/* Navbar */
+/* Navbar links to sections styled */
 
 .navbar-nav .nav-link {
     color: #9d9d9d;
@@ -127,6 +130,8 @@ spinner animation found on CodePen: https://codepen.io/judecodes/pen/PrBOvG?&pag
     display: block;
 
 }
+
+/* Navbar hamburger button and links effects styled */
 
 .navbar-toggler {
     color: #9d9d9d;
@@ -203,7 +208,8 @@ input {
     padding: 0;
 }
 
-/* Styling for buttons */
+/* Styling for buttons. 
+Select buttons light green (dark green on hover) and reset black (light green on hover) */
 
 .button {
     color: #fff;
@@ -226,7 +232,7 @@ input {
     background-color: #00bc66;
 }
 
-/* Swich of frame on focus and change color for input focus */
+/* Swich of frame on focus and change color (light green) for input focus */
 
 .button:focus,
 .navbar-toggler:focus {
@@ -289,6 +295,8 @@ h2 {
     font-weight: 600;
     text-transform: uppercase;
 }
+
+/* Light green color for heading h2 */
 
 h2 {
     color: #00bc66;
@@ -447,8 +455,6 @@ footer {
 
 }
 
-
-
 @media only screen and (max-width: 425px) {
 
     select {
@@ -467,8 +473,7 @@ footer {
         font-size: 0.9rem;
     }
 
-/* right and bottom value smaller to avoid overlapping with social media links */
-
+    /* Right and bottom value smaller to avoid overlapping with social media links */
     #button {
         bottom: 10px;
         right: 10px;
