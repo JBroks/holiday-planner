@@ -10,6 +10,7 @@ body {
     font-weight: 400;
     font-size: 1.1rem;
     padding-top: 100px;
+    scroll-padding-top: 108px;
 }
 
 .container-fluid {
@@ -124,7 +125,7 @@ spinner animation found on CodePen: https://codepen.io/judecodes/pen/PrBOvG?&pag
     text-decoration: none;
     text-transform: uppercase;
     display: block;
-    
+
 }
 
 .navbar-toggler {
@@ -293,7 +294,7 @@ h2 {
     color: #00bc66;
 }
 
-td {
+#resultsTable td {
     cursor: pointer;
 }
 
@@ -352,8 +353,8 @@ footer {
     text-align: center;
     border-radius: 3px;
     position: fixed;
-    bottom: 30px;
-    right: 30px;
+    bottom: 20px;
+    right: 20px;
     transition: background-color .3s,
     opacity .5s, visibility .5s;
     opacity: 0;
@@ -428,7 +429,8 @@ footer {
 
     /* Padding adjusted to accommodate fixed navbar on smaller displays */
     body {
-        padding-top: 150px
+        padding-top: 150px;
+        scroll-padding-top: 150px;
     }
 
 }
@@ -463,6 +465,13 @@ footer {
 
     #resultsTable {
         font-size: 0.9rem;
+    }
+
+/* right and bottom value smaller to avoid overlapping with social media links */
+
+    #button {
+        bottom: 10px;
+        right: 10px;
     }
 
 }
