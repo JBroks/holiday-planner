@@ -130,11 +130,17 @@ The project consists of the following features:
 
 #### CSS
 
-..........
-Remaining warrnings:
+CSS code was validated using the [W3C CSS Validation Service - Jigsaw](https://jigsaw.w3.org/css-validator/).
+
+While validating CSS code the following warning appeared: 
+
 ```
 Imported style sheets are not checked in direct input and file upload modes
 ```
+
+This warning remains unresolved as it is only an information stating that validator is not able to validate imported stylesheets.
+
+Also, the following warning appeared during the CSS validation:
 
 ```
 -webkit-border-radius is an unknown vendor extension
@@ -142,18 +148,29 @@ Imported style sheets are not checked in direct input and file upload modes
 -moz-appearance is an unknown vendor extension
 ```
 
+This vendor extension is used to edit select menu button look so it does not display default arrows and does not round edges. This will be improved in the future and replaced by use of the **jQuery UI** `selectmenu` feature (description available [here](https://jqueryui.com/selectmenu/)).
+
 #### HTML
 
-Warning about empty heading left unresolved as it is set up like that on purpose. Heading is filled when the results table is created.
+HTML code was validated using the [W3C Markup Validation Service](https://validator.w3.org/).
+
+All errors and warning were addressed except the following:
+
 ```
- <h2 id="results-heading"></h2>
+Warning: Empty heading.
+
+From line 181, column 21; to line 181, column 45
+
+          <h2 id="results-heading"></h2>↩
 ```
-..........
+
+Warning about empty heading was left unresolved as it is set up like that on purpose. Heading is filled when the results table is created.
 
 #### JavaScript
-https://jshint.com/
-validates well only warning about $, Swal and google being undefined variables
-.........
+
+JavaScript code was validated using [JSHint](https://jshint.com/).
+
+Validator has indicated that there are three unknown / undefined variables, namely $, Swal, google. The warning was ignored as I believe it is due to the fact that these libraries are separated and the validator dose not have access to them.
 
 ### Features testing
 
