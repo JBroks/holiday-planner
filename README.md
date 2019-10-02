@@ -411,19 +411,27 @@ $ git clone https://github.com/JBroks/holiday-planner.git
 
 ### Content
 
-...........
+Content of the website is largely based on the Google Maps Javascript API.
 
 ### Media
 
-Favicon used for the project was download from [here](.............).
+Favicon used for the project was download from [here](https://icons8.com/icons/).
 
 ### Acknowledgements
 
-.......
+Spinner animation found on [Codepen](https://codepen.io/judecodes/pen/PrBOvG?&page=1).
 
-Many thanks to my mentor **Maranatha Ilesanmi** for support and advice throughout the project.
+Back to top button was inspired by [this](https://codepen.io/matthewcain/pen/ZepbeR) Codepen solution.
 
+Solution to 'sticky' hover on mobile devices found [here](https://medium.com/@ferie/detect-a-touch-device-with-only-css-9f8e30fa1134).
 
+Not collapsing navbar menu issue was resolved using [this](https://stackoverflow.com/questions/21203111/bootstrap-3-collapsed-menu-doesnt-close-on-click) solution.
+
+`scroll-padding-top` solution was found [here](https://css-tricks.com/fixed-headers-on-page-links-and-overlapping-content-oh-my/).
+
+Solution to this issue with `container-fluid` class was found in [here](https://stackoverflow.com/questions/34828198/container-fluid-leaving-blank-space).
+
+Solution used while editing select menu buttons was found [here](https://developer.mozilla.org/en-US/docs/Web/CSS/appearance).
 
 ### Disclaimer
 
