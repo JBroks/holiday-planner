@@ -84,45 +84,45 @@ The project consists of the following features:
 
 ### Features left to implement
 
-..........improve menus using jquery ui
+..........improve menus using jquery ui, 
 
 ## Technologies used
 
 ### Programming languages
 
-- HTML - The project used **HTML** to define structure and layout of the web page;
+- **HTML** - The project used HTML to define structure and layout of the web page;
 
-- CSS - The project used **CSS** stylesheets to specify style of the web document elements;
+- **CSS** - The project used CSS stylesheets to specify style of the web document elements;
 
-- JavaScript - ...............
+- **JavaScript** - The project used Javascript to implement Maps Javascript API and customize it.
 
 ### Libraries
 
-- [jQuery]() - 
+- [jQuery](https://code.jquery.com/jquery-3.4.1.min.js) - The project used `show()` and `hide()` method to display loading spinner. jQuery was also used to fix the bootstrap menu issue (not collapsing after clicking a link) and to clear results section heading after clicking the reset button;
 
-- [Sweetalert2]() - 
+- [Sweetalert2](https://sweetalert2.github.io/#download) - It was used to create customizable alert pop up boxes;
 
-- [Font Awesome]() - 
+- [Font Awesome](https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css) - Font Awesome social media and navbar menu icons were used for the project;
 
-- [Google Fonts]() - 
+- [Google Fonts](https://fonts.google.com/) -  Google Fonts library was used to set up font type for the document;
 
 ### Frameworks
 
-- [Bootstrap]() - 
+- [Bootstrap]() - The project used Bootstrap to create nice grid layout, and position elements within grids. The framework was also used to create and customize the navbar element;
 
 ### Other
 
-- [Maps JavaScript API]() - 
+- [Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/tutorial) - It was used to implement map feature on the website;
 
-- [Places Library]() - 
+- [Places Library](https://developers.google.com/maps/documentation/javascript/places) - Library was used to enable search for places within the specified area and to implement autocomplete feature;
 
-- [Gifox]() - 
+- [Gifox](https://gifox.io/) - Tool was used to record the gif presented in the demo secion of this README files;
 
-- [Am I Responsive]() - 
+- [Am I Responsive](http://ami.responsivedesign.is/#) - Online tool was used to display the project on various devices;
 
-- [Free Logo Design](https://www.freelogodesign.org/) - 
+- [Free Logo Design](https://www.freelogodesign.org/) - Online tool that was used to create a logo for the website;
 
-- [MockFlow WireframePro]() - 
+- [MockFlow WireframePro](https://www.mockflow.com/) - Online tool that was used to create wireframes.
 
 ## Testing
 
