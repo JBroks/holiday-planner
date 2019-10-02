@@ -38,15 +38,17 @@ The main objective of the website is to provide a user with a tool that will ena
 
 The following user stories were used to design this project:
 
-**User Story 1:** 
+**User Story 1:** As a user I would like to explore different holliday destination options so I can decide which one is the most suitable for me.
 
-**User Story 2:** 
+**User Story 2:** As a user I would like to understand what any destination has to offer i.e. what sort of accommodation, restaurants and / or tourists attractions are available in the area specified by me.
 
-**User Story 3:** 
+**User Story 3:** As a user I would like to be able to investigate any type of place (accommodation / restaurants / tourist attraction) in more detail so I am aware what are e.g. opening times, contact details and reservation requirements.
 
-**User Story 4:** 
+**User Story 4:** As a user I would like to have a quick way to clear all filters applied by me without refreshing the page.
 
-**User Story 5:** 
+**User Story 5:** As a user I would like to have an option of easy navigation throughtout the page without scrolling back and forth all the time.
+
+**User Story 6:** As a user I would like to be informed if I am doing anythig wrong to understand how can I fix my error.
 
 ### Mockups & Wireframes
 
