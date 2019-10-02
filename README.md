@@ -60,25 +60,27 @@ The following [wireframe](https://github.com/JBroks/holiday-planner/blob/master/
 
 The project consists of the following features:
 
-- Spinner - 
+- Spinner - jQuery method `show()` and `hide()` was used to create spinner showing while data is loading;
 
-- Navbar - 
+- Navbar - the navbar stays collapsed on all devices and FontAwesome bar icon is used. The navbar contains brand logo and links to associated sections i.e. Filters, Map, Results;
 
-- Select menus - 
+- Select menus - select options for countries and place types (accommodation / restaurants / tourist attractions);
 
-- Autocomplete input window - 
+- Autocomplete input window - input window that autocomplete  
 
-- Reset button - 
+- Reset button - feature that enables users to reset all applied filters and clear the selection;
 
-- Map - 
+- Map - Maps JavaScript API that contains markers and information window after user applies appropriate filter;
 
-- Information window - 
+- Information window - information windo is displayed when user clicks on a marker or results displayed in the results table. Window contains information about place name, address, phone number and rating;
 
-- Results table - 
+- Results table - table appears when a user specified destination (country and city) and place type. Results table displays marker, place name and address;
 
 - Footer - contains social media link and copyrights information;
 
-- Back to top button - 
+- Back to top button - back to top button was implemented so user can go back to the top of the page without scrolling back. The feature is especially useful on mobile devices.
+
+- Missing information alerts - alerts created using **Sweetalert2** framework that inform users about missing information. 
 
 ### Features left to implement
 
@@ -214,6 +216,10 @@ validates well only warning about $, Swal and google being undefined variables
 - Solution: .........
 - 
 **User Story 5:** 
+
+- Solution: .........
+
+**User Story 6:** 
 
 - Solution: .........
 
