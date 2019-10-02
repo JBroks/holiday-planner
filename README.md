@@ -2,31 +2,37 @@
 
 Stream Two Project: Interactive Frontend Development - extra credit project.
 
-![alt text](....... "Gif")
+![alt text](https://github.com/JBroks/holiday-planner/blob/master/gif/holidayPlanner.gif "Gif")
 
-..........
+This website uses Google Maps API to create a holiday planner tool that will enable its user to filter out place types (accommodation, restaurant, tourist attractions) by country and city.
 
 Project consists of the following sections:
 
-1. .......
+1. Filters - contains two select menus to specify country and place type (accommodation, restaurant, tourist attraction), and input window that enables a user to specify the city of their choice.
 
-2. ........
+2. Map - section contains Google Maps API map that contains markers pointing to places narrowed down by applied filters.
 
-3. ........
+3. Results - section contains a table that presents the same outputs as the map but in tabular form. Section stays hidden if selection has not been made.
 
 ## Demo
 
-Website demo is available [here](............. "holiday-planner").
+Website demo is available [here](https://jbroks.github.io/holiday-planner/ "holiday-planner").
 
 ## UX
 
 ### UX Design
 
-..............
+In this project I was aiming to achieve a simple and user friendly user design, while providing all required information. All sections are arranged in a logical order to provide intuitive user experience.
+
+To create stylish, high contrast look I used the following colors in my design: white (`#ffffff`), off-white (`#f6f7f6`), light-green (`#00bc66`), dark-green (`#00703c`) and range of grey / dark-grey colors (`#222222`, `#9d9d9d`, `#333333`, `#474b4e`).
+
+High contrast theme gives an addiional advantage for low-vision users as it is makes it easier for them to read. 
 
 ### Target Audience
 
-.............
+This website aims to attract people that are planning their holidays and would like to find most suitable place to visit. It informs its user about accommodation and restaurant choice in the selected area. The website also provides them with information about local tourist attractions.
+
+The main objective of the website is to provide a user with a tool that will enable them to filter out accommodation / restaurants / tourist attraction inforamtion based on a destination specified by them.
 
 ### User Stories
 
@@ -44,13 +50,7 @@ The following user stories were used to design this project:
 
 ### Mockups & Wireframes
 
-The following wireframe sketches were created to design the dashboard layout options:
-
-- [Mobile display](................)
-   
-- [Medium display](............)
-
-- [Desktop display](..............)
+The following [wireframe](https://github.com/JBroks/holiday-planner/blob/master/wireframes/wireframes.pdf) sketches were created to design the dashboard layout options for large, medium and mobile displays.
 
 ## Features
 
@@ -58,15 +58,29 @@ The following wireframe sketches were created to design the dashboard layout opt
 
 The project consists of the following features:
 
-- ........
+- Spinner - 
 
-- .........
+- Navbar - 
 
-- ........
+- Select menus - 
+
+- Autocomplete input window - 
+
+- Reset button - 
+
+- Map - 
+
+- Information window - 
+
+- Results table - 
+
+- Footer - contains social media link and copyrights information;
+
+- Back to top button - 
 
 ### Features left to implement
 
-..........
+..........improve menus using jquery ui
 
 ## Technologies used
 
@@ -79,23 +93,32 @@ The project consists of the following features:
 - JavaScript - ...............
 
 ### Libraries
-- ........
 
-- .........
+- [jQuery]() - 
 
-- ...........
+- [Sweetalert2]() - 
+
+- [Font Awesome]() - 
+
+- [Google Fonts]() - 
 
 ### Frameworks
 
-- ..........
+- [Bootstrap]() - 
 
 ### Other
 
-- ........
+- [Maps JavaScript API]() - 
 
-- ........
+- [Places Library]() - 
 
-- ........
+- [Gifox]() - 
+
+- [Am I Responsive]() - 
+
+- [Free Logo Design](https://www.freelogodesign.org/) - 
+
+- [MockFlow WireframePro]() - 
 
 ## Testing
 
@@ -104,13 +127,28 @@ The project consists of the following features:
 #### CSS
 
 ..........
+Remaining warrnings:
+```
+Imported style sheets are not checked in direct input and file upload modes
+```
+
+```
+-webkit-border-radius is an unknown vendor extension
+-webkit-appearance is an unknown vendor extension
+-moz-appearance is an unknown vendor extension
+```
 
 #### HTML
 
+Warning about empty heading left unresolved as it is set up like that on purpose. Heading is filled when the results table is created.
+```
+ <h2 id="results-heading"></h2>
+```
 ..........
 
 #### JavaScript
-
+https://jshint.com/
+validates well only warning about $, Swal and google being undefined variables
 .........
 
 ### Features testing
