@@ -178,33 +178,143 @@ Warning about empty heading was left unresolved as it is set up like that on pur
 
 JavaScript code was validated using [JSHint](https://jshint.com/).
 
-Validator has indicated that there are three unknown / undefined variables, namely $, Swal, google. The warning was ignored as I believe it is due to the fact that these libraries are separated and the validator dose not have access to them.
+Validator has indicated that there are three unknown / undefined variables, namely `$`, `Swal`, `google`. The warning was ignored as I believe it is due to the fact that these libraries are separated and the validator dose not have access to them.
 
 ### Features testing
 
-#### Feature 1
-
-.........
+#### Spinner
 
 ##### Bugs:
 
-........
+No bugs noticed.
 
-#### Feature 2
+#### Navbar
 
-..........
+While testing the navbar it was noticed that after clicking an item on the list the menu was not collapsing. This issue was resolved using the solution available [here](https://stackoverflow.com/questions/21203111/bootstrap-3-collapsed-menu-doesnt-close-on-click).
+
+This jQuery function was implemented to resolve the problem:
+
+```
+$(".navbar-nav li a").click(function(event) {
+  if (!$(this).parent().hasClass('dropdown'))
+    $(".navbar-collapse").collapse('hide');
+});
+```
+
+Another bug was discovered when testing anchors for navbar menu items. When clicking on an item it was scrolling to a given section but the fixed navbar covered the content (i.e. the section heading). Solution to this problem was found [here](https://css-tricks.com/fixed-headers-on-page-links-and-overlapping-content-oh-my/). The issue was fixed by applying `scroll-padding-top`, to `body` and `html` elements, equal to the height of the navbar. This solution works for most of browsers except Safari.
 
 ##### Bugs:
 
-..........
+There is still one bug that needs to be resolved, namely if a user clicks on the navbar menu the list unfolds, and in the case when no item is selected the list does not collapse back until any item (on the page) is clicked.
 
-#### Feature 3
+As mentioned above Safari browser does not react to `scroll-padding-top` therefore alternative solutions needs to be found.
 
-........
+#### Select menu and Autocomplete input window
+
+While testing place type select menu an error was noticed. Since *default* place type option was undefined error was displayed in the console. The issue was resolved by adding a function that assumed if *default* option is selected no marker will be dropped:
+
+```
+function onDefaultType() {
+    let option = document.getElementById('place-type').value;
+    if (option != 'default') {
+        search();
+    }
+}
+```
+
+Also in case when no country or city was specified markers were dropped anyway. This issue was resolved by implementing missing information alerts. This issue was resolved by the following function:
+
+```
+function typeWithoutPlace() {
+    let city = document.getElementById('city-input').value;
+    let countrySelect = document.getElementById('country').value;
+
+    if (countrySelect == 'default' && city == '') {
+        Swal.fire('Information missing', 'Please select a country and enter a city name first!', 'info');
+        clearPlaceTypeSelection();
+    }
+    else if (countrySelect != 'default' && city == '') {
+        Swal.fire('Information missing', 'Please enter a city name first!', 'info');
+        clearPlaceTypeSelection();
+    }
+    else {
+        search();
+    }
+}
+```
 
 ##### Bugs:
 
-...........
+No bug was left unresolved.
+
+#### Reset button
+
+There was an issue with the *reset section* as the bootstrap container fluid class applied was leaving a blank space on the right side of the page. Solution to this issue was found in [here](https://stackoverflow.com/questions/34828198/container-fluid-leaving-blank-space).
+This block of code resolved the problem:
+
+```
+.container-fluid {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+```
+
+##### Bugs:
+
+No unresolved bugs.
+
+#### Map
+
+##### Bugs:
+
+No bugs noticed.
+
+#### Information window
+
+##### Bugs:
+
+No bugs noticed.
+
+#### Results table
+
+There was an issue with heading for the *results table*, namely it was not cleared after reset function was applied. Initially this piece of code was tested:
+
+```
+$('#results-heading').innerHTML("");
+```
+
+However it did not work properly so this jQuery function method was applied:
+
+``` 
+$('#results-heading').empty();
+```
+
+##### Bugs:
+
+No unresolved bugs.
+
+#### Footer
+
+All links were tested and working well.
+
+##### Bugs:
+
+No bugs noticed.
+
+#### Back to top button
+
+##### Bugs:
+
+While testing this button on mobile devices 'sticky' hover effect was noticed. That issue was resolved using `@media (hover: hover)` solution.
+
+This solution will have to be replaced with a better one in the future, ideally with one that will resolve this issue for all buttons.
+
+#### Missing information alert
+
+##### Bugs:
+
+No bugs noticed.
 
 ### Responsivness testing
 
@@ -216,11 +326,11 @@ Validator has indicated that there are three unknown / undefined variables, name
 
 ### Peer-code-review
 
-...........
+...........TBC.......
 
 #### Bugs:
 
-............
+...........TBC.......
 
 ### User stories testing
 
