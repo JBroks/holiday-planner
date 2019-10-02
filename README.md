@@ -318,11 +318,29 @@ No bugs noticed.
 
 ### Responsivness testing
 
-............
+This site was tested across multiple browsers (Google Chrome, Safari, Mozilla Firefox, Opera) and on multiple mobile devices (iPad Mini, iPad, Huawei P20) to ensure compatibility and responsiveness.
+
+Chrome developer tools were used to additionally inspect responsiveness for the following devices:
+
+- iPad Pro / iPad / iPad Mini (portrait & landscape);
+
+- iPhone 5/SE (portrait & landscape);
+
+- iPhone 6/7/8 (portrait & landscape);
+
+- iPhone 6/7/8 Plus (portrait & landscape);
+
+- iPhone X (portrait & landscape);
+
+- Android (Pixel 2) (portrait & landscape).
+
+Furthermore, [Responsinator](https://www.responsinator.com/) was used to test responsiveness of the final version of the project.
+
+The website is fully responsive and working well on mobile devices.
 
 #### Bugs:
 
-........
+No bugs noticed.
 
 ### Peer-code-review
 
