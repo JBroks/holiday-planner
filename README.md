@@ -60,31 +60,39 @@ The following [wireframe](https://github.com/JBroks/holiday-planner/blob/master/
 
 The project consists of the following features:
 
-- Spinner - jQuery method `show()` and `hide()` was used to create spinner showing while data is loading;
+- **Spinner** - jQuery method `show()` and `hide()` was used to create spinner showing while data is loading;
 
-- Navbar - the navbar stays collapsed on all devices and FontAwesome bar icon is used. The navbar contains brand logo and links to associated sections i.e. Filters, Map, Results;
+- **Navbar** - the navbar stays collapsed on all devices and FontAwesome bar icon is used. The navbar contains brand logo and links to associated sections i.e. Filters, Map, Results;
 
-- Select menus - select options for countries and place types (accommodation / restaurants / tourist attractions);
+- **Select menus** - select options for countries and place types (accommodation / restaurants / tourist attractions);
 
-- Autocomplete input window - input window that autocomplete  
+- **Autocomplete input window** - input window that autocomplete  
 
-- Reset button - feature that enables users to reset all applied filters and clear the selection;
+- **Reset button** - feature that enables users to reset all applied filters and clear the selection;
 
-- Map - Maps JavaScript API that contains markers and information window after user applies appropriate filter;
+- **Map** - Maps JavaScript API that contains markers and information window after user applies appropriate filter;
 
-- Information window - information windo is displayed when user clicks on a marker or results displayed in the results table. Window contains information about place name, address, phone number and rating;
+- **Information window** - information windo is displayed when user clicks on a marker or results displayed in the results table. Window contains information about place name, address, phone number and rating;
 
-- Results table - table appears when a user specified destination (country and city) and place type. Results table displays marker, place name and address;
+- **Results table** - table appears when a user specified destination (country and city) and place type. Results table displays marker, place name and address;
 
-- Footer - contains social media link and copyrights information;
+- **Footer** - contains social media link and copyrights information;
 
-- Back to top button - back to top button was implemented so user can go back to the top of the page without scrolling back. The feature is especially useful on mobile devices.
+- **Back to top button** - back to top button was implemented so user can go back to the top of the page without scrolling back. The feature is especially useful on mobile devices.
 
-- Missing information alerts - alerts created using **Sweetalert2** framework that inform users about missing information. 
+- **Missing information alerts** - alerts created using **Sweetalert2** framework that inform users about missing information. 
 
 ### Features left to implement
 
-..........improve menus using jquery ui, 
+List of features to be implemented in the future:
+
+- jQuery UI selectmenu feature to improve visual effect of the country and place type select list;
+
+- Photos of places and opening hours added to information window;
+
+- Information such as contact details, website, reviews added to the results table;
+
+- Photo carouselle for the selected place to be displayed or a window presenting reviews for selected place.
 
 ## Technologies used
 
