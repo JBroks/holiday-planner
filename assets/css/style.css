@@ -240,7 +240,7 @@ Select buttons light green (dark green on hover) and reset black (light green on
     background-color: #00bc66;
 }
 
-/* Swich of frame on focus and change color (light green) for input focus */
+/* Switch of frame on focus and change color (light green) for input focus */
 
 .button:focus,
 .navbar-toggler:focus {
@@ -400,14 +400,9 @@ footer {
 
 /* MEDIA QUERIES */
 
-/* Media queries to deal with select menu button and navbar / footer separator */
+/* Media queries to deal with select menu button */
 
 @media only screen and (max-width: 1200px) {
-
-    nav,
-    footer {
-        margin: 0 60px;
-    }
 
     select {
         width: 60%;
@@ -432,11 +427,6 @@ footer {
 }
 
 @media only screen and (max-width: 750px) {
-
-    nav,
-    footer {
-        margin: 0 30px;
-    }
 
     select {
         width: 35%;
