@@ -356,27 +356,27 @@ No bugs noticed.
 
 **User Story 1:**
 
-- Solution: *Filters section* enables user specify location (*country select menu* feature and *city autocomplete* feature) and to filter out range of destinations and place types (*place type select menu*) in order to understand what a given place has to offer. When results are filtered out when clicking on the marker information including details such as website address and phone number will be displayed in the *information window pop up*. Results will also be displayed in the *results table.*.
+- Solution: ***Filters section*** enables user specify location (***country select menu*** feature and ***city autocomplete*** feature) and to filter out range of destinations and place types (***place type select menu***) in order to understand what a given place has to offer. When results are filtered out when clicking on the marker information including details such as website address and phone number will be displayed in the ***information window pop up***. Results will also be displayed in the ***results table***.
 
 **User Story 2:** 
 
-- Solution: *Filters section* enables user specify location (*country select menu* feature and *city autocomplete* feature) and to filter out range of destinations and place types (*place type select menu*) in order to understand what a given place has to offer. When results are filtered out when clicking on the marker information including details such as website address and phone number will be displayed in the *information window pop up*. Results will also be displayed in the *results table*.
+- Solution: ***Filters section*** enables user specify location (***country select menu*** feature and ***city autocomplete*** feature) and to filter out range of destinations and place types (***place type select menu***) in order to understand what a given place has to offer. When results are filtered out when clicking on the marker information including details such as website address and phone number will be displayed in the ***information window pop up***. Results will also be displayed in the ***results table***.
 
 **User Story 3:** 
 
-- Solution: *Filters section* enables user specify location (*country select menu* feature and *city autocomplete* feature) and to filter out range of destinations and place types (*place type select menu*) in order to understand what a given place has to offer. When results are filtered out when clicking on the marker information including details such as website address and phone number will be displayed in the *information window pop up feature*. Results will also be displayed in the *results table*. Using these results user is able to investigate any place further by contacting it directly or checking websites refered in the information window.
+- Solution: ***Filters section*** enables user specify location (***country select menu*** feature and ***city autocomplete*** feature) and to filter out range of destinations and place types (***place type select menu***) in order to understand what a given place has to offer. When results are filtered out when clicking on the marker information including details such as website address and phone number will be displayed in the ***information window pop up***. Results will also be displayed in the ***results table***. Using these results user is able to investigate any place further by contacting it directly or checking websites refered in the information window.
 
 **User Story 4:** 
 
-- Solution: Reset button  was included at the bottom of the *filters section* to enable users to reset all filters at once.
+- Solution: Reset button  was included at the bottom of the ***filters section*** to enable users to reset all filters at once.
 
 **User Story 5:** 
 
-- Solution: To make navigation throughout the website easy and user friendly *navbar menu* and *back to top button* features were implemented.
+- Solution: To make navigation throughout the website easy and user friendly ***navbar menu*** and ***back to top button*** features were implemented.
 
 **User Story 6:** 
 
-- Solution: *Pop up alerts* functions were implemented to inform the user about any missing information.
+- Solution: ***Pop up alerts*** functions were implemented to inform the user about any missing information.
 
 ## Deployment
 
