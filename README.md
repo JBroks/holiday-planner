@@ -354,27 +354,27 @@ No bugs noticed.
 
 **User Story 1:**
 
-- Solution: .......
+- Solution: *Filters section* enables user to filter out range of destinations and place types (accommodation / restaurants / tourist attractions) in order to understand what a given place has to offer. When results are filtered out when clicking on the marker information including details such as website address and phone number will be displayed in the *information window pop up*. Results will also be displayed in the *results table.*
 - 
 **User Story 2:** 
 
-- Solution: ........
+- Solution: *Filters section* enables user to filter out range of destinations and place types (accommodation / restaurants / tourist attractions) in order to understand what a given place has to offer. When results are filtered out when clicking on the marker information including details such as website address and phone number will be displayed in the *information window pop up*. Results will also be displayed in the *results table*.
 
 **User Story 3:** 
 
-- Solution: .......
+- Solution: *Filters section* enables user to filter out range of destinations and place types (accommodation / restaurants / tourist attractions) in order to understand what a given place has to offer. When results are filtered out when clicking on the marker information including details such as website address and phone number will be displayed in the *information window pop up feature*. Results will also be displayed in the *results table*. Using these results user is able to investigate any place further by contacting it directly or checking websites refered in the information window.
 
 **User Story 4:** 
 
-- Solution: .........
+- Solution: Reset button  was included at the bottom of the *filters section* to enable users to reset all filters at once.
 - 
 **User Story 5:** 
 
-- Solution: .........
+- Solution: To make navigation throughout the website easy and user friendly *navbar menu* and *back to top button* features were implemented.
 
 **User Story 6:** 
 
-- Solution: .........
+- Solution: *Pop up alerts* functions were implemented to inform the user about any missing information.
 
 ## Deployment
 
