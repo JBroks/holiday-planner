@@ -106,7 +106,7 @@ List of features to be implemented in the future:
 
 ### Libraries
 
-- [jQuery](https://code.jquery.com/jquery-3.4.1.min.js) - The project used `show()` and `hide()` method to display loading spinner. jQuery was also used to fix the bootstrap menu issue (not collapsing after clicking a link) and to clear results section heading after clicking the reset button;
+- [jQuery](https://code.jquery.com/jquery-3.4.1.min.js) - The project used `show()` and `hide()` method to display loading spinner. jQuery was also used to fix the bootstrap menu issue (not collapsing after clicking a link) and to clear *results section* heading after clicking the reset button;
 
 - [Sweetalert2](https://sweetalert2.github.io/#download) - It was used to create customizable alert pop up boxes;
 
@@ -266,9 +266,11 @@ No unresolved bugs.
 
 #### Map
 
+Lack of padding at the bottom of the *map section* was noticed and resolved by applying bootstrap padding class `py-4`.
+
 ##### Bugs:
 
-No bugs noticed.
+No unresolved bugs.
 
 #### Information window
 
