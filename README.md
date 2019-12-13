@@ -116,7 +116,7 @@ List of features to be implemented in the future:
 
 ### Frameworks
 
-- [Bootstrap]() - The project used Bootstrap to create nice grid layout, and position elements within grids. The framework was also used to create and customize the navbar element;
+- [Bootstrap](https://getbootstrap.com/) - The project used Bootstrap to create nice grid layout, and position elements within grids. The framework was also used to create and customize the navbar element;
 
 ### Other
 
