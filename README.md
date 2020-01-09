@@ -24,7 +24,7 @@ Website demo is available [here](https://jbroks.github.io/holiday-planner/ "holi
 
 In this project I was aiming to achieve a simple and user friendly user design, while providing all required information. All sections are arranged in a logical order to provide intuitive user experience.
 
-To create stylish, high contrast look I used the following colors in my design: white (`#ffffff`), off-white (`#f6f7f6`), light-green (`#00bc66`), dark-green (`#00703c`) and range of grey / dark-grey colors (`#222222`, `#9d9d9d`, `#333333`, `#474b4e`).
+To create stylish, high contrast look I used the following colors in my design: white (`#ffffff`), off-white (`#f6f7f6`), light-green (`#00bc66`), dark-green (`#00703c`, `#32703d`) and range of grey / dark-grey colors (`#222222`, `#9d9d9d`, `#333333`, `#474b4e`).
 
 High contrast theme gives an addiional advantage for low-vision users as it is makes it easier for them to read. 
 
