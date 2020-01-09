@@ -169,10 +169,10 @@ spinner animation found on CodePen: https://codepen.io/judecodes/pen/PrBOvG?&pag
 /* Edit select menu button look so it doesn't display default arrows and doesnt't round edges */
 
 select {
-    -webkit-border-radius: 0px;
     border-radius: 0px;
-    -webkit-appearance: button;
-    -moz-appearance: button;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 
     width: 45%;
     padding: 5px 0 5px 10px;
