@@ -126,13 +126,13 @@ spinner animation found on CodePen: https://codepen.io/judecodes/pen/PrBOvG?&pag
 
 .navbar {
     padding: 0;
-    background-color: #222222;
+    background-color: #00bc66;
 }
 
 /* Navbar links to sections styled */
 
 .navbar-nav .nav-link {
-    color: #9d9d9d;
+    color: #32703d;
     text-decoration: none;
     text-transform: uppercase;
     display: block;
@@ -142,16 +142,17 @@ spinner animation found on CodePen: https://codepen.io/judecodes/pen/PrBOvG?&pag
 /* Navbar hamburger button and links effects styled */
 
 .navbar-toggler {
-    color: #9d9d9d;
+    color: #32703d;
 }
 
 .navbar-toggler:hover,
 .navbar-nav .nav-link:hover {
-    color: #ffffff;
+    color: #9d9d9d;
 }
 
 #navbar-container {
     margin: auto;
+    background-color: #f6f7f6;
 }
 
 /* Navbar menu button size increase */
